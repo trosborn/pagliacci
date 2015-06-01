@@ -1,10 +1,19 @@
 %html
   %head
-    %title Pagliacci Pizza
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta{:charset => 'utf-8'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1'}
+
+    %title= content_for?(:title) ? yield(:title) : 'Pagliacci Pizza – Settle Area Pizza Delivery and Catering'
+    = javascript_include_tag 'vendor/modernizr'
+    = stylesheet_link_tag :application, :media => 'all'
+    = javascript_include_tag :application
     = csrf_meta_tags
-%body
-  = image_tag 'pagliacci-logo.png'
-  = yield
-  =
+    = favicon_link_tag 'favicon.ico'
+
+  %body
+    .row
+      .small-12.medium-3.large-3.columns.small-text-center
+        = render 'layouts/header'
+      .small-12.medium-9.large-9.columns
+        = yield
+
