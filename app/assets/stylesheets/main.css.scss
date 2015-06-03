@@ -4,10 +4,10 @@
 }
 
 body {
-  background: white;
+  background-color: black;
 }
 
 @font-face {
   font-family: 'Knockout Bantamweight';
-  src: font-url(../fonts/Knockout-HTF47-Bantamweight.ttf);
+  src: asset-url('Knockout-HTF47-Bantamweight.ttf');
 }
