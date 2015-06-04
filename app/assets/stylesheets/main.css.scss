@@ -12,6 +12,16 @@ body {
   src: asset-url('Knockout-HTF47-Bantamweight.ttf');
 }
 
+@font-face {
+  font-family: 'AvenirLTPro-Book';
+  src: asset-url('AvenirLTPro-Book.otf');
+}
+
+@font-face {
+  font-family: 'Carrosserie-Regular';
+  src: asset-url('Carrosserie-Regular.ttf');
+}
+
 #scrollify {
   background-image: asset-url('paper-background.jpg');
   max-width: 860px;
