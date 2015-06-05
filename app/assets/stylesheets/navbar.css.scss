@@ -1,24 +1,32 @@
 nav {
-  margin-left: 0;
+  width: 100%;
+  margin-top: 30px;
+}
+
+nav li {
+  display: inline-block;
 }
 
 nav ul {
+  text-align: justify;
   list-style-type: none;
   width: 100%;
-  position: relative;
-  display: flex;
-  align-items: stretch;
-  margin: 0;
-  padding: 0;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
   max-height: 80px;
+}
+
+nav ul:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
 }
 
 nav ul li {
   text-align: center;
-  padding: 0;
-  margin: 0;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
   vertical-align: top;
-  line-height: 4em;
 }
 
 nav ul li a {
