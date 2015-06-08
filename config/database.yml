@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: aminoize_development
+  database: pagliacci_development
   pool: 5
   username:
   password:
@@ -20,7 +20,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: aminoize_test
+  database: pagliacci_test
   pool: 5
   username:
   password:
@@ -28,6 +28,6 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: aminoize_production
+  database: pagliacci_production
   pool: 5
   password:
