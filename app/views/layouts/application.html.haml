@@ -1,19 +1,16 @@
-%html
+!!! 5
+%html{html_attrs}
   %head
-    %meta{:charset => 'utf-8'}
-    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1'}
-
-    %title= content_for?(:title) ? yield(:title) : 'Pagliacci Pizza – Settle Area Pizza Delivery and Catering'
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1', :charset => 'utf-8'}
+    %title= content_for?(:title) ? yield(:title) : 'Pagliacci Pizza – Seattle Area Pizza Delivery and Catering'
     = javascript_include_tag 'vendor/modernizr'
     = stylesheet_link_tag :application, :media => 'all'
     = javascript_include_tag :application
     = csrf_meta_tags
     = favicon_link_tag 'favicon.ico'
-
   %body
     .small-12.medium-4.large-3.columns.small-text-center
       = render 'layouts/header'
     .small-12.medium-8.large-9.columns#scrollify
       = render 'layouts/navbar'
       = yield
-
