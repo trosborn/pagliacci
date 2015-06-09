@@ -1,12 +1,12 @@
 %nav
   %ul
     %li
-      = link_to 'MENU', action: 'menu'
+      = link_to 'MENU', controller: 'menu', action: 'index'
     %li
-      = link_to 'CATERING', action: 'catering'
+      = link_to 'CATERING', controller: 'welcome', action: 'catering'
     %li
-      = link_to 'LOCATIONS', action: 'locations'
+      = link_to 'LOCATIONS', controller: 'welcome', action: 'locations'
     %li
-      = link_to 'ABOUT', action: 'about'
+      = link_to 'ABOUT', controller: 'welcome', action: 'about'
     %li
-      = link_to 'HOME', action: 'index'
+      = link_to 'HOME', controller: 'welcome', action: 'index'
