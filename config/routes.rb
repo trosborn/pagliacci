@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :menu
+  resource :menu
+  resources :pizzas
 
   get 'welcome/about'
   get 'welcome/catering'
