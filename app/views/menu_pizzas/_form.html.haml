@@ -1,0 +1,14 @@
+= form_for @menu_pizza do |f|
+  - if @menu_pizza.errors.any?
+    #error_explanation
+      %h2 = pluralize(@menu_pizza.errors.count, 'error') prohibted this post from being saved
+
+  .field
+    = f.label :name
+    = f.text_area :name
+
+    = f.label :description
+    = f.text_area :description
+
+    = f.submit 'Add Toppings', name: 'add-toppings'
+
