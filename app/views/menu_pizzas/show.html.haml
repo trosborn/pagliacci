@@ -1,5 +1,5 @@
 = @menu_pizza.name
-= @menu_pizza.description
-
-= select_tag :topping, options_from_collection_for_select(@toppings, 'id', 'name')
-
+#p
+  = @menu_pizza.description
+- @menu_pizza.toppings.each do |t|
+  = t.name

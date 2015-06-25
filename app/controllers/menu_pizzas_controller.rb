@@ -5,11 +5,11 @@ class MenuPizzasController < ApplicationController
 
   def new
     @menu_pizza = MenuPizza.new
+    @toppings = Topping.all
   end
 
   def show
     @menu_pizza = MenuPizza.find(params[:id])
-    @toppings = Topping.all
   end
 
   def create
@@ -36,6 +36,6 @@ class MenuPizzasController < ApplicationController
 
   private
   def menu_pizza_params
-    params.require(:menu_pizza).permit(:name, :description)
+    params.require(:menu_pizza).permit(:name, :description, :topping_ids)
   end
 end
