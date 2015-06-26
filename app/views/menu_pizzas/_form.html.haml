@@ -10,6 +10,6 @@
     = f.label :description
     = f.text_area :description
 
-    = f.select :topping_ids, Topping.all.collect {|x| [x.name, x.id]}, :multiple => true
+    = f.select(:topping_ids, @toppings, {multiple: true})
 
     = f.submit 'Add Toppings', name: 'add-toppings'

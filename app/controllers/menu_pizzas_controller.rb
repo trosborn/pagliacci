@@ -5,7 +5,7 @@ class MenuPizzasController < ApplicationController
 
   def new
     @menu_pizza = MenuPizza.new
-    @toppings = Topping.all
+    @toppings = Topping.all.collect {|x| [x.name, x.id]}
   end
 
   def show
