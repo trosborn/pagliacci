@@ -11,7 +11,7 @@
       %ul
         - @toppings.each do |t|
           %li
-            = check_box_tag :topping_ids, t.id, @menu_pizza.toppings.include?(t), :name => 'menu_pizza[topping_ids][]'
+            = check_box_tag "#{t.name}", t.id, @menu_pizza.toppings.include?(t), :name => 'menu_pizza[topping_ids][]'
             %label
               = t.name
   = submit_tag 'Create'

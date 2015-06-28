@@ -11,45 +11,32 @@ feature 'Admin Can Create Standard Pizza' do
     Ostrom's mushrooms, olives, green peppers, onions and mozzarella over our
     seasoned tomato sauce."
 
-    click_on 'Add Toppings'
+    click_on 'Create'
 
     page.must_have_content 'Brooklyn Bridge'
     page.must_have_content "Pepperoni, Cascioppo Bros. Italian sausage,
     Ostrom's mushrooms, olives, green peppers, onions and mozzarella over our
     seasoned tomato sauce."
   end
-  scenario 'as a site admin, I can add default toppings to the Brooklyn Bridge' do
-    click_on 'Add Topping'
-    select 'Pepperoni', from: 'Topping 1'
-    click_on 'Add Topping'
-    select 'Sausage', from: 'Topping 2'
-    click_on 'Add Topping'
-    select 'Mushroom', from: 'Topping 3'
-    click_on 'Add Topping'
-    select 'Onion', from: 'Topping 4'
-    click_on 'Add Topping'
-    select 'Green Pepper', from: 'Topping 5'
-    click_on 'Add Topping'
-    select 'Mozarella', from: 'Toping 6'
-    click_on 'Add Topping'
-    select 'Red Sauce', from: 'Topping 7'
-    click_on 'Add Topping'
+  scenario 'as a site admin, I can add toppings to the Brooklyn Bridge' do
+    test_pizza = menu_pizzas(:veggie_fresh)
+    visit edit_menu_pizza_path test_pizza
+    check 'pepperoni'
+    check 'sausage'
+    check 'mushroom'
+    check 'onion'
+    check 'green_pepper'
+    check 'mozzarella'
+    check 'red_sauce'
 
-    page.must_have_content 'Pepperoni'
-    page.must_have_content 'Sausage'
-    page.must_have_content 'Mushroom'
-    page.must_have_content 'Onion'
-    page.must_have_content 'Green Pepper'
-    page.must_have_content 'Mozarella'
-    page.must_have_content 'Red Sauce'
-  end
-  scenario 'as a site admin, a pizza I create requires a name' do
-    visit menu_pizzas_path
+    click_on 'Create'
 
-    click_on 'Add New Pizza'
-
-    click_on 'Add Toppings'
-
-    page.must_have_content 'Pizza Could Not Be Saved: Pizza Requires a Name'
+    page.must_have_content 'pepperoni'
+    page.must_have_content 'sausage'
+    page.must_have_content 'mushroom'
+    page.must_have_content 'onion'
+    page.must_have_content 'green pepper'
+    page.must_have_content 'mozzarella'
+    page.must_have_content 'red sauce'
   end
 end
