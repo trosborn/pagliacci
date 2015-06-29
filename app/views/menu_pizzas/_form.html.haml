@@ -1,0 +1,17 @@
+= form_for @menu_pizza do |f|
+  - if @menu_pizza.errors.any?
+    #error_explanation
+      %h2 = pluralize(@menu_pizza.errors.count, 'error') prohibted this post from being saved
+  .field
+    = f.label :name
+    = f.text_area :name
+    = f.label :description
+    = f.text_area :description
+    - if @menu_pizza.persisted?
+      %ul
+        - @toppings.each do |t|
+          %li
+            = check_box_tag "#{t.name}", t.id, @menu_pizza.toppings.include?(t), :name => 'menu_pizza[topping_ids][]'
+            %label
+              = t.name
+  = submit_tag 'Create'

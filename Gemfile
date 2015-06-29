@@ -37,6 +37,7 @@ end
 gem 'minitest-rails'
 
 group :test do
+  gem 'launchy'
   gem 'minitest-rails-capybara'
 end
 
