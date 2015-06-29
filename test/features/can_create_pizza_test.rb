@@ -19,7 +19,7 @@ feature 'Admin Can Create Standard Pizza' do
     seasoned tomato sauce."
   end
   scenario 'as a site admin, I can add toppings to the Brooklyn Bridge' do
-    test_pizza = menu_pizzas(:veggie_fresh)
+    test_pizza = menu_pizzas(:brooklyn_bridge)
     visit edit_menu_pizza_path test_pizza
     check 'pepperoni'
     check 'sausage'
@@ -38,5 +38,11 @@ feature 'Admin Can Create Standard Pizza' do
     page.must_have_content 'green pepper'
     page.must_have_content 'mozzarella'
     page.must_have_content 'red sauce'
+  end
+  scenario 'as a side admin, I can add sizes for all pizzas' do
+    test_pizza = menu_pizzas(:brooklyn_bridge)
+    visit edit_menu_pizza_path test_pizza
+
+
   end
 end
