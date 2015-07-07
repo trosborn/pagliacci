@@ -11,16 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619062441) do
+ActiveRecord::Schema.define(version: 20150707215243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "item_sizes", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "menu_pizza_id"
+    t.integer  "topping_id"
+  end
+
   create_table "menu_pizzas", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.decimal  "small_price",  precision: 4, scale: 2
+    t.decimal  "medium_price", precision: 4, scale: 2
+    t.decimal  "large_price",  precision: 4, scale: 2
   end
 
   create_table "pizza_toppings", force: :cascade do |t|
