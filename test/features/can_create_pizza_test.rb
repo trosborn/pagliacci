@@ -39,10 +39,18 @@ feature 'Admin Can Create Standard Pizza' do
     page.must_have_content 'mozzarella'
     page.must_have_content 'red sauce'
   end
-  scenario 'as a side admin, I can add sizes for all pizzas' do
+  scenario 'as a side admin, I can add prices for each size of pizza' do
     test_pizza = menu_pizzas(:brooklyn_bridge)
     visit edit_menu_pizza_path test_pizza
 
+    fill_in 'Small price', with: 18.49
+    fill_in 'Medium price', with: 22.49
+    fill_in 'Large price', with: 25.99
 
+    click_on 'Create'
+
+    page.must_have_content '18.49'
+    page.must_have_content '22.49'
+    page.must_have_content '25.99'
   end
 end

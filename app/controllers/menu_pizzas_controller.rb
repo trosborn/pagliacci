@@ -45,6 +45,6 @@ class MenuPizzasController < ApplicationController
   end
 
   def menu_pizza_params
-    params.require(:menu_pizza).permit(:name, :description, :topping_ids)
+    params.require(:menu_pizza).permit(:name, :description, :topping_ids, :small_price, :medium_price, :large_price)
   end
 end
