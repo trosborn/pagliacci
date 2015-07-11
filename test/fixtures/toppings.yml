@@ -1,0 +1,23 @@
+pepperoni:
+  name: 'pepperoni'
+
+sausage:
+  name: 'sausage'
+
+onion:
+  name: 'onion'
+
+green_pepper:
+  name: 'green pepper'
+
+black_olives:
+  name: 'black olives'
+
+mozzarella:
+  name: 'mozzarella'
+
+red_sauce:
+  name: 'red sauce'
+
+mushroom:
+  name: 'mushroom'

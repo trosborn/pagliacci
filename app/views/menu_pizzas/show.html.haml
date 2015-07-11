@@ -1,0 +1,11 @@
+= @menu_pizza.name
+#p
+  = @menu_pizza.description
+  = @menu_pizza.small_price
+  = @menu_pizza.medium_price
+  = @menu_pizza.large_price
+
+- @menu_pizza.toppings.each do |t|
+  = t.name
+
+= link_to 'Edit', edit_menu_pizza_path(@menu_pizza)
