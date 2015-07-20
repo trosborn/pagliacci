@@ -1,6 +1,6 @@
 require 'test_helper'
 
-feature 'Admin Can Create Standard Pizza' do
+feature 'Admin Can CRUD Menu Pizzas' do
   scenario 'as a site admin, I can create a Brooklyn Bridge' do
     visit menu_pizzas_path
 
@@ -52,5 +52,24 @@ feature 'Admin Can Create Standard Pizza' do
     page.must_have_content '18.49'
     page.must_have_content '22.49'
     page.must_have_content '25.99'
+  end
+  scenario 'as a site admin, I am prevented from creating a pizza without a name' do
+    visit new_menu_pizza_path
+
+    click_on 'Create'
+    page.must_have_content "Name can't be blank"
+  end
+  scenario 'as a site admin, I can edit a pizza' do
+    test_pizza = menu_pizzas(:brooklyn_bridge)
+
+    visit menu_pizza_path test_pizza
+    save_and_open_page
+    click_on 'Edit'
+
+    check 'mushroom'
+    fill_in 'Name', with: 'Veggie Fresh'
+
+    page.must_have_content 'Veggie Fresh'
+    page.must_have_content 'mushroom'
   end
 end
