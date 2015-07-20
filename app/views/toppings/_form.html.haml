@@ -1,7 +1,7 @@
 = form_for @topping do |f|
   - if @topping.errors.any?
     #error_explanation
-      %h2 = pluralize(@topping.errors.count, 'error') prohibted this post from being saved
+      %h2 = pluralize(@topping.errors.count, 'error') + "prohibted this topping from being saved"
 
   .field
     = f.label :name

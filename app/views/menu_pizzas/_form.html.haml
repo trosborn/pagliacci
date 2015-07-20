@@ -1,7 +1,13 @@
 = form_for @menu_pizza do |f|
   - if @menu_pizza.errors.any?
     #error_explanation
-      %h2 = pluralize(@menu_pizza.errors.count, 'error') prohibted this post from being saved
+      %h2
+      = pluralize(@menu_pizza.errors.count, 'error') + ' prohibited this post from being saved'
+
+      %ul
+        - @menu_pizza.errors.full_messages.each do |msg|
+          %li
+            = msg
   .field
     = f.label :name
     = f.text_area :name
