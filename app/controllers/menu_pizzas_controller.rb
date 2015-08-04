@@ -3,7 +3,7 @@ class MenuPizzasController < ApplicationController
   before_action :set_toppings, only: [:edit, :update]
 
   def index
-    @menu_pizzas
+    @menu_pizzas = MenuPizza.all
   end
 
   def new

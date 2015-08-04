@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'menu_pizzas#index'
 
   resources :menu_pizzas
   resources :toppings
