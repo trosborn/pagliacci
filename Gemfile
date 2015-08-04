@@ -28,9 +28,10 @@ gem 'haml-rails', '~> 0.9'
 
 gem 'rails_12factor', group: :production
 
+gem 'stackprof', '~> 0.2.7'
+
 group :development, :test do
   gem 'byebug'
-
   gem 'spring'
 end
 
@@ -40,4 +41,7 @@ group :test do
   gem 'launchy'
   gem 'minitest-rails-capybara'
 end
+
+gem 'rack-mini-profiler'
+gem 'flamegraph'
 

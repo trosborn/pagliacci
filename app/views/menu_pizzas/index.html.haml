@@ -1,1 +1,9 @@
 = link_to 'Add New Pizza', controller: 'menu_pizzas', action: 'new'
+- cache @menu_pizzas do
+  - @menu_pizzas.each do |p|
+    %p
+      = p.name
+      = p.description
+      = p.small_price
+      = p.medium_price
+      = p.large_price
