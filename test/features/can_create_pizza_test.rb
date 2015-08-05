@@ -63,7 +63,6 @@ feature 'Admin Can CRUD Menu Pizzas' do
     test_pizza = menu_pizzas(:brooklyn_bridge)
 
     visit menu_pizza_path test_pizza
-    save_and_open_page
     click_on 'Edit'
 
     check 'mushroom'

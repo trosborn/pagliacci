@@ -1,0 +1,21 @@
+= form_for @salad do |f|
+  - if @salad.errors.any?
+    #error_explanation
+      %h2
+      = pluralize(@salad.errors.count, 'error') + ' prohibited this post from being saved'
+
+      %ul
+        - @salad.errors.full_messages.each do |msg|
+          %li
+            = msg
+  .field
+    = f.label :name
+    = f.text_area :name
+    = f.label :small_price
+    = f.number_field :small_price, step: 'any'
+    = f.label :medium_price
+    = f.number_field :medium_price, step: 'any'
+    = f.label :large_price
+    = f.number_field :large_price, step: 'any'
+
+  = submit_tag 'Create'

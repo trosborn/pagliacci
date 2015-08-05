@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :menu_pizzas
   resources :toppings
+  resources :salads
 
   get 'menu/index'
   get 'welcome/about'
