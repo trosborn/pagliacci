@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707215243) do
+ActiveRecord::Schema.define(version: 20150805002035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20150707215243) do
 
   add_index "pizza_toppings", ["menu_pizza_id"], name: "index_pizza_toppings_on_menu_pizza_id", using: :btree
   add_index "pizza_toppings", ["topping_id"], name: "index_pizza_toppings_on_topping_id", using: :btree
+
+  create_table "salads", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.decimal  "small_price",  precision: 4, scale: 2
+    t.decimal  "medium_price", precision: 4, scale: 2
+    t.decimal  "large_price",  precision: 4, scale: 2
+  end
 
   create_table "toppings", force: :cascade do |t|
     t.string   "name"

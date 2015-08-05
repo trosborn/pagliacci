@@ -13,6 +13,9 @@ class MenuPizzasController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def create
     @menu_pizza = MenuPizza.new(menu_pizza_params)
     respond_to do |format|
