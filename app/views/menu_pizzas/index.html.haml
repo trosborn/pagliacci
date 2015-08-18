@@ -1,1 +1,13 @@
 = link_to 'Add New Pizza', controller: 'menu_pizzas', action: 'new'
+
+- @menu_pizzas.each do |m|
+  %p
+    %h2
+      = m.name
+    = m.description
+    %br
+    = m.small_price
+    = m.large_price
+    = m.medium_price
+
+

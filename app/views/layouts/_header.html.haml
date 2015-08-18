@@ -5,7 +5,8 @@
       = image_tag 'order-online-mouse-out.jpg'
     %h3 CALL FOR DELIVERY
     %h4 206.726.1717 • 425.453.1717
-    %h5 DELIVERY 5-11 TODAY!
+    %h5
+      = @delivery_hours
   %ul#social
     %li
       = link_to image_tag('facebook-icon.png'), 'https://www.facebook.com/pagliaccipizza'
