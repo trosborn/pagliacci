@@ -30,6 +30,8 @@ gem 'rails_12factor', group: :production
 
 gem 'stackprof', '~> 0.2.7'
 
+gem 'coveralls', require: false
+
 group :development, :test do
   gem 'byebug'
   gem 'spring'
