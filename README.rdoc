@@ -1,4 +1,4 @@
 == README
 
-{<img src="https://travis-ci.org/trosborn/pagliacci.png?branch=master" alt="Build Status" />}[https://travis-ci.org/trosborn/pagliacci][![Coverage Status](https://coveralls.io/repos/trosborn/pagliacci/badge.svg?branch=master&service=github)](https://coveralls.io/github/trosborn/pagliacci?branch=master)
-
+{<img src="https://travis-ci.org/trosborn/pagliacci.png?branch=master" alt="Build Status" />}[https://travis-ci.org/trosborn/pagliacci]
+{<img src="https://coveralls.io/repos/trosborn/pagliacci/badge.svg?branch=master&service=github" alt="Coverage Status" />}[https://coveralls.io/github/trosborn/pagliacci?branch=master]
