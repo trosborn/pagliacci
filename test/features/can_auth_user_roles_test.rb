@@ -10,6 +10,8 @@ feature 'Site Roles' do
   end
   scenario 'as a customer, I cannot see the Edit Menu button' do
     visit root_path
+    sign_in :thomas
+
     page.wont_have_content 'Edit Menu'
     page.must_have_content 'Login to edit this menu'
   end
