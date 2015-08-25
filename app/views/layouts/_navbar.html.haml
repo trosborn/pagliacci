@@ -1,10 +1,7 @@
 %nav
   %ul
     %li
-      = link_to 'MENU', controller: 'menu', action: 'index'
+      = link_to 'Log out', destroy_user_session_path, :method => :delete
     %li
-      = link_to 'CATERING', controller: 'welcome', action: 'catering'
     %li
-      = link_to 'LOCATIONS', controller: 'welcome', action: 'locations'
     %li
-      = link_to 'ABOUT', controller: 'welcome', action: 'about'
