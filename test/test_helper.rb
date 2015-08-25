@@ -13,9 +13,9 @@ class ActiveSupport::TestCase
   fixtures :all
 end
 
-def sign_in
+def sign_in role
   visit new_user_session_path
-  fill_in 'Email', with: users(:one).email
+  fill_in 'Email', with: users(role).email
   fill_in 'Password', with: 'password'
   click_on 'Log in'
 end

@@ -22,7 +22,7 @@ feature 'Account access' do
     page.must_have_content 'Signed in successfully.'
   end
   scenario 'I want to sign out' do
-    sign_in
+    sign_in :thomas
 
     click_on 'Log out'
 
