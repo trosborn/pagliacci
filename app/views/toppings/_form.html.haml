@@ -7,4 +7,7 @@
     = f.label :name
     = f.text_area :name
 
-    = f.submit
+    = check_box 'topping', 'seasonal'
+    = check_box 'topping', 'active'
+
+    = submit_tag 'Create'

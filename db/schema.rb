@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805002035) do
+ActiveRecord::Schema.define(version: 20150824223452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,13 @@ ActiveRecord::Schema.define(version: 20150805002035) do
   create_table "menu_pizzas", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
     t.decimal  "small_price",  precision: 4, scale: 2
     t.decimal  "medium_price", precision: 4, scale: 2
     t.decimal  "large_price",  precision: 4, scale: 2
+    t.boolean  "seasonal",                             default: false
+    t.boolean  "active",                               default: false
   end
 
   create_table "pizza_toppings", force: :cascade do |t|
@@ -43,15 +45,18 @@ ActiveRecord::Schema.define(version: 20150805002035) do
     t.decimal  "small_price",  precision: 4, scale: 2
     t.decimal  "medium_price", precision: 4, scale: 2
     t.decimal  "large_price",  precision: 4, scale: 2
+    t.string   "description"
   end
 
   create_table "toppings", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.boolean  "meat"
     t.boolean  "veggie"
     t.boolean  "cheese"
+    t.boolean  "seasonal",   default: false
+    t.boolean  "active",     default: false
   end
 
 end

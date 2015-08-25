@@ -1,2 +1,16 @@
 = link_to 'Add New Pizza', controller: 'menu_pizzas', action: 'new'
-= render 'menu_pizzas'
+%br
+- @menu_pizzas.each do |p|
+  %br
+  %b
+    = p.name
+  %br
+  = p.description
+  %br
+  = p.small_price
+  •
+  = p.medium_price
+  •
+  = p.large_price
+  %br
+  = link_to 'Edit', edit_menu_pizza_path(p)

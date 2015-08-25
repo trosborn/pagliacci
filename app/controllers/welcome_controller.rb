@@ -13,5 +13,4 @@ class WelcomeController < ApplicationController
 
   def catering
   end
-
 end

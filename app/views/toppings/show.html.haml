@@ -1,1 +1,6 @@
 = "Name: #{@topping.name.humanize}"
+= link_to 'Edit', edit_topping_path(@topping)
+- if @topping.seasonal?
+  Seasonal
+- if @topping.active?
+  Active
