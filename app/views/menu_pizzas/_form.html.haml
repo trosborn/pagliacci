@@ -27,4 +27,6 @@
             = check_box_tag "#{t.name}", t.id, @menu_pizza.toppings.include?(t), :name => 'menu_pizza[topping_ids][]'
             %label
               = t.name
+      = check_box 'menu_pizza', 'seasonal'
+      = check_box 'menu_pizza', 'active'
   = submit_tag 'Create'

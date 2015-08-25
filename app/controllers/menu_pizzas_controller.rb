@@ -28,7 +28,7 @@ class MenuPizzasController < ApplicationController
   end
 
   def update
-    @menu_pizza.attributes = {'topping_ids' => []}.merge(params[:menu_pizza] || {})
+    @menu_pizza.attributes = { 'topping_ids' => []}.merge(menu_pizza_params || {} )
     respond_to do |format|
       if @menu_pizza.update(menu_pizza_params)
         format.html { redirect_to @menu_pizza, notice: 'Pizza was successfully updated.' }
@@ -48,6 +48,6 @@ class MenuPizzasController < ApplicationController
   end
 
   def menu_pizza_params
-    params.require(:menu_pizza).permit(:name, :description, :topping_ids, :small_price, :medium_price, :large_price)
+    params.require(:menu_pizza).permit(:name, :description, :topping_ids, :small_price, :medium_price, :large_price, :active, :seasonal, :topping_ids => [])
   end
 end

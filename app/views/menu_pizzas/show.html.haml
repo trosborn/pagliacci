@@ -4,6 +4,10 @@
   = @menu_pizza.small_price
   = @menu_pizza.medium_price
   = @menu_pizza.large_price
+  - if @menu_pizza.seasonal?
+    Seasonal
+  - if @menu_pizza.active?
+    Active
 
 - @menu_pizza.toppings.each do |t|
   = t.name

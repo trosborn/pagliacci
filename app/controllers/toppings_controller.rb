@@ -1,4 +1,6 @@
 class ToppingsController < ApplicationController
+  before_action :set_topping, only: [:show, :edit, :update, :destroy]
+
   def index
     @toppings = Topping.all
   end
@@ -8,7 +10,9 @@ class ToppingsController < ApplicationController
   end
 
   def show
-    @topping = Topping.find(params[:id])
+  end
+
+  def edit
   end
 
   def create
@@ -22,8 +26,22 @@ class ToppingsController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @topping.update(topping_params)
+        format.html { redirect_to @topping, notice: 'Topping was successfully updated.' }
+      else
+        format.html { render action: 'edit' }
+      end
+    end
+  end
+
   private
   def topping_params
-    params.require(:topping).permit(:name)
+    params.require(:topping).permit(:name, :seasonal, :active)
+  end
+
+  def set_topping
+    @topping = Topping.find(params[:id])
   end
 end

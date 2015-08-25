@@ -71,4 +71,18 @@ feature 'Admin Can CRUD Menu Pizzas' do
     page.must_have_content 'Veggie Fresh'
     page.must_have_content 'mushroom'
   end
+  scenario 'as a site admin, I can mark a pizza as seasonal and mark it as active' do
+    test_pizza = menu_pizzas(:brooklyn_bridge)
+
+    visit menu_pizza_path test_pizza
+    click_on 'Edit'
+
+    check 'menu_pizza[active]'
+    check 'menu_pizza[seasonal]'
+
+    click_on 'Create'
+
+    page.must_have_content 'Active'
+    page.must_have_content 'Seasonal'
+  end
 end

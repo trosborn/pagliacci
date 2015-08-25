@@ -7,8 +7,22 @@ feature 'Admin Can Create Topping' do
     click_on 'Create Pizza Topping'
     fill_in 'Name', with: 'ricotta'
 
-    click_on 'Create Topping'
+    click_on 'Create'
 
     page.must_have_content 'Name: Ricotta'
+  end
+  scenario 'as an admin, I want to set a topping as seasonal and active' do
+    test_topping = toppings(:pepperoni)
+    visit topping_path test_topping
+
+    click_on 'Edit'
+
+    check 'topping[active]'
+    check 'topping[seasonal]'
+
+    click_on 'Create'
+
+    page.must_have_content 'Active'
+    page.must_have_content 'Seasonal'
   end
 end
