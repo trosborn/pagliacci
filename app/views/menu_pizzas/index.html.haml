@@ -14,3 +14,7 @@
   = p.large_price
   %br
   = link_to 'Edit', edit_menu_pizza_path(p)
+  %ol
+    - p.toppings.each do |t|
+      %li
+        = t.name
