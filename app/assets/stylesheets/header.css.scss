@@ -1,5 +1,5 @@
 #header {
-  position: fixed;
+  position: absolute;
 }
 
 #delivery {
@@ -27,11 +27,12 @@
   font-size: 40px;
 }
 
-#delivery h4 {
+#delivery h4 a {
   margin-top: 0px;
   margin-bottom: 0px;
   line-height: 1em;
   font-size: 29px;
+  color: white;
 }
 
 #delivery h5 {
