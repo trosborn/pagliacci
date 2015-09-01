@@ -1,6 +1,6 @@
 class MenuPizzasController < ApplicationController
   before_action :set_menu_pizza, only: [:show, :edit, :update, :destroy]
-  before_action :set_toppings, only: [:edit, :update]
+  before_action :set_toppings, only: [:new, :create, :edit, :update]
 
   def index
     @menu_pizzas = MenuPizza.all
@@ -35,6 +35,13 @@ class MenuPizzasController < ApplicationController
       else
         format.html { render action: 'edit' }
       end
+    end
+  end
+
+  def destroy
+    @menu_pizza.destroy
+    respond_to do |format|
+      format.html { redirect_to menu_pizzas_url }
     end
   end
 
