@@ -36,6 +36,13 @@ class ToppingsController < ApplicationController
     end
   end
 
+  def destroy
+    @topping.destroy
+    respond_to do |format|
+      format.html { redirect_to toppings_url }
+    end
+  end
+
   private
   def topping_params
     params.require(:topping).permit(:name, :seasonal, :active)

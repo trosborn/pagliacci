@@ -1,3 +1,8 @@
-brooklyn_bridge:
-  name: 'Brooklyn Bridge'
-  description: ''
+veggie_fresh:
+  name: 'Veggie Phresh'
+  description: 'Veggies and stuff'
+  seasonal: false
+  active: true
+  small_price: 10
+  medium_price: 50
+  large_price: 00.01

@@ -10,4 +10,8 @@
     = check_box 'topping', 'seasonal'
     = check_box 'topping', 'active'
 
-    = submit_tag 'Create'
+    - if @topping.persisted?
+      = submit_tag 'Update'
+      = link_to 'Delete', topping_path(@topping), method: :delete
+    - else
+      = submit_tag 'Create'
