@@ -1,6 +1,9 @@
 require 'test_helper'
 
 feature 'Admin Can CRUD Menu Pizzas' do
+  before :each do
+    sign_in :admin
+  end
   scenario 'as a site admin, I can view a pizza' do
     test_pizza = menu_pizzas(:veggie_fresh)
 
@@ -85,7 +88,6 @@ feature 'Admin Can CRUD Menu Pizzas' do
   end
   scenario 'as a site admin, I can delete a pizza' do
     test_pizza = menu_pizzas(:veggie_fresh)
-
     visit edit_menu_pizza_path test_pizza
 
     click_on 'Delete'

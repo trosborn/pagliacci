@@ -4,5 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end
+class NullUser
+  def admin?
+    nil
+  end
+end
 
 

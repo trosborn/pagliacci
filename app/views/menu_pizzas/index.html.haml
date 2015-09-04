@@ -1,4 +1,5 @@
-= link_to 'Add New Pizza', controller: 'menu_pizzas', action: 'new'
+- if policy(@menu_pizzas).create?
+  = link_to 'Add New Pizza', controller: 'menu_pizzas', action: 'new'
 %br
 - @menu_pizzas.each do |p|
   %br
@@ -12,9 +13,9 @@
   = p.medium_price
   •
   = p.large_price
-  %br
-  = link_to 'Edit', edit_menu_pizza_path(p)
   %ol
     - p.toppings.each do |t|
       %li
         = t.name
+  - if policy(@menu_pizzas).update?
+    = link_to 'Edit', edit_menu_pizza_path(p)
