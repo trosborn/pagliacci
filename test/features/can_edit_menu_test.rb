@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'helpers/test_helper'
 
 feature 'CanEditMenu' do
   scenario 'as admin, I can add new menu items' do

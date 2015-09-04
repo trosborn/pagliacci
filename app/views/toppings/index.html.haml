@@ -1,4 +1,6 @@
-= link_to 'Create Pizza Topping', controller: 'toppings', action: 'new'
-
+- if policy(@toppings).create?
+  = link_to 'Create Pizza Topping', controller: 'toppings', action: 'new'
 - @toppings.each do |t|
- = t.name
+  = t.name
+  - if policy(@toppings).update?
+    = link_to 'Edit', edit_topping_path(t)

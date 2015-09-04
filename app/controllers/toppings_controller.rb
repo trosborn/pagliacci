@@ -1,5 +1,6 @@
 class ToppingsController < ApplicationController
   before_action :set_topping, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized, except: [:index, :show]
 
   def index
     @toppings = Topping.all
@@ -7,12 +8,14 @@ class ToppingsController < ApplicationController
 
   def new
     @topping = Topping.new
+    authorize @topping, :new?
   end
 
   def show
   end
 
   def edit
+    authorize @topping, :edit?
   end
 
   def create
@@ -24,6 +27,7 @@ class ToppingsController < ApplicationController
         format.html { render action: 'new' }
       end
     end
+    authorize @topping, :create?
   end
 
   def update
@@ -34,6 +38,7 @@ class ToppingsController < ApplicationController
         format.html { render action: 'edit' }
       end
     end
+    authorize @topping, :update?
   end
 
   def destroy
@@ -41,6 +46,7 @@ class ToppingsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to toppings_url }
     end
+    authorize @topping, :destroy?
   end
 
   private

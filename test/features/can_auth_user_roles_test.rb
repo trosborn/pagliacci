@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'helpers/test_helper'
 
 feature 'Site Roles' do
   scenario 'as a site admin, I can see the Edit Menu button' do

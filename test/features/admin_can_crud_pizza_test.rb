@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'helpers/test_helper'
 
 feature 'Admin Can CRUD Menu Pizzas' do
   before :each do
