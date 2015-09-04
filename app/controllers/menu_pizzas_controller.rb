@@ -1,6 +1,7 @@
 class MenuPizzasController < ApplicationController
   before_action :set_menu_pizza, only: [:show, :edit, :update, :destroy]
   before_action :set_toppings, only: [:new, :create, :edit, :update]
+  after_action :verify_authorized, except: [:index, :show]
 
   def index
     @menu_pizzas = MenuPizza.all
@@ -8,12 +9,14 @@ class MenuPizzasController < ApplicationController
 
   def new
     @menu_pizza = MenuPizza.new
+    authorize @menu_pizza, :new?
   end
 
   def show
   end
 
   def edit
+    authorize @menu_pizza, :edit?
   end
 
   def create
@@ -25,6 +28,7 @@ class MenuPizzasController < ApplicationController
         format.html { render action: 'new' }
       end
     end
+    authorize @menu_pizza, :create?
   end
 
   def update
@@ -36,6 +40,7 @@ class MenuPizzasController < ApplicationController
         format.html { render action: 'edit' }
       end
     end
+    authorize @menu_pizza, :update?
   end
 
   def destroy
@@ -43,9 +48,10 @@ class MenuPizzasController < ApplicationController
     respond_to do |format|
       format.html { redirect_to menu_pizzas_url }
     end
+    authorize @menu_pizza, :destroy?
   end
 
-  private
+private
   def set_toppings
     @toppings = Topping.all
   end

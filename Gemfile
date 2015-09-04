@@ -4,6 +4,8 @@ ruby '2.2.2'
 
 gem 'devise'
 
+gem 'pundit'
+
 gem 'rails', '4.2.0'
 
 gem 'pg'
