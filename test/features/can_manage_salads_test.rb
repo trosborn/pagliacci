@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'helpers/test_helper'
 
 feature 'as a site admin, I can CRUD salads' do
   scenario 'I can create a salad' do

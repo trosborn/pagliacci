@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'helpers/test_helper'
 
 feature 'Account access' do
   scenario 'I want to create a new account' do
