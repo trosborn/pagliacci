@@ -18,4 +18,8 @@
     = f.label :large_price
     = f.number_field :large_price, step: 'any'
 
-  = submit_tag 'Create'
+  - if @salad.persisted?
+    = submit_tag 'Update'
+    = link_to 'Delete', salad_path(@salad), method: :delete
+  - else
+    = submit_tag 'Create'

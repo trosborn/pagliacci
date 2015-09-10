@@ -1,5 +1,6 @@
 class SaladsController < ApplicationController
   before_action :set_salad, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized, except: [:index, :show]
 
   def index
     @salads = Salad.all
@@ -10,9 +11,11 @@ class SaladsController < ApplicationController
 
   def new
     @salad = Salad.new
+    authorize @salad, :new?
   end
 
   def edit
+    authorize @salad, :edit?
   end
 
   def create
@@ -24,6 +27,7 @@ class SaladsController < ApplicationController
         format.html { render action: 'new' }
       end
     end
+    authorize @salad, :create?
   end
 
   def update
@@ -34,6 +38,15 @@ class SaladsController < ApplicationController
         format.html { render action: 'edit' }
       end
     end
+    authorize @salad, :update?
+  end
+
+  def destroy
+    @salad.destroy
+    respond_to do |format|
+      format.html { redirect_to salads_url }
+    end
+    authorize @salad, :destroy?
   end
 
   private
