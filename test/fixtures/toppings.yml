@@ -1,6 +1,7 @@
 pepperoni:
   name: 'pepperoni'
   seasonal: true
+  id: 1
 
 sausage:
   name: 'sausage'

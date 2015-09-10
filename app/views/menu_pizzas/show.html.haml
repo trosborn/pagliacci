@@ -12,4 +12,5 @@
 - @menu_pizza.toppings.each do |t|
   = t.name
 
-= link_to 'Edit', edit_menu_pizza_path(@menu_pizza)
+- if policy(@menu_pizza).update?
+  = link_to 'Edit', edit_menu_pizza_path(@menu_pizza)

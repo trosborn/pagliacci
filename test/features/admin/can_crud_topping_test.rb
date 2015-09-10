@@ -1,15 +1,16 @@
 require 'helpers/test_helper'
 
 feature 'Admin Can CRUD Toppings' do
-  scenario 'as a site admin, I can view a topping' do
+  before :each do
     sign_in :admin
+  end
+  scenario 'as a site admin, I can view a topping' do
     test_topping = toppings(:pepperoni)
     visit topping_path test_topping
 
     page.must_have_content 'Pepperoni'
   end
-  scenario 'as an admin, I want to create ricotta as a pizza topping' do
-    sign_in :admin
+  scenario 'admin wants to create pizza topping' do
     visit toppings_path
 
     click_on 'Create Pizza Topping'
@@ -23,8 +24,7 @@ feature 'Admin Can CRUD Toppings' do
     page.must_have_content 'Active'
     page.must_have_content 'Seasonal'
   end
-  scenario 'as an admin, I want to edit a topping' do
-    sign_in :admin
+  scenario 'admin wants to edit a pizza topping' do
     test_topping = toppings(:pepperoni)
     visit topping_path test_topping
     click_on 'Edit'
@@ -40,8 +40,7 @@ feature 'Admin Can CRUD Toppings' do
     page.wont_have_content 'Seasonal'
     page.wont_have_content 'pepperoni'
   end
-  scenario 'as a site admin, I want to delete a topping' do
-    sign_in :admin
+  scenario 'admin wants to delete a pizza topping' do
     test_topping = toppings(:sausage)
     visit topping_path test_topping
 

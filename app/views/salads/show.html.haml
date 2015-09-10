@@ -2,3 +2,6 @@
 = @salad.small_price
 = @salad.medium_price
 = @salad.large_price
+
+- if policy(@salad).update?
+  = link_to 'Edit', edit_salad_path(@salad)
