@@ -1,10 +1,12 @@
-%nav
-  %ul
-    %li
-      - if user_signed_in?
-        = link_to 'Log out', destroy_user_session_path, :method => :delete
-      - else
-        = link_to 'Login or Sign up', new_user_session_path
-    %li
-    %li
-    %li
+.sticky
+  %nav.top-bar
+    = link_to 'ABOUT', '/about'
+    |
+    = link_to 'MENU', '/menu'
+    |
+    = link_to 'CATERING', '/catering'
+    |
+    = link_to 'LOCATIONS', '/locations'
+    |
+    = link_to 'ORDER ONLINE!', 'order.pagliacci.com', id: 'order-online'
+

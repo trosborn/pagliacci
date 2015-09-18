@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'menu#index'
+  root 'welcome#index'
 
   resources :menu_pizzas
   resources :toppings

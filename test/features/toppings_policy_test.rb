@@ -14,7 +14,7 @@ feature 'crud buttons in toppings policy' do
   scenario 'non-admins cannot see the add new pizza button' do
     visit toppings_path
 
-    page.wont_have_content 'Create Pizza Topping '
+    page.wont_have_content 'Create Pizza Topping'
   end
   scenario 'admin can see the edit button' do
     sign_in :admin
