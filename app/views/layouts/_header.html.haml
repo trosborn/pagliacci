@@ -1,23 +1,8 @@
-= image_tag 'pagliacci-logo.png', id: 'logo'
-#delivery
-  .order-online
-    = image_tag 'order-online-mouse-out.jpg'
-  %h3 CALL FOR DELIVERY
-  %h4
-    = link_to '206.726.1717', 'tel:2067261717'
-    •
-    = link_to '425.453.1717', 'tel:4254531717'
-  %h5 DELIVERY 5-11 TODAY!
-%ul#social
-  %li
-    = link_to image_tag('facebook-icon.png'), 'https://www.facebook.com/pagliaccipizza'
-  %li
-    = link_to image_tag('instagram-icon.png'), 'https://instagram.com/pagliaccipizza/'
-  %li
-    = link_to image_tag('twitter-icon.png'), 'https://twitter.com/pagliaccipizza'
-  %li
-    = link_to image_tag('youtube-icon.png'), 'https://www.youtube.com/channel/UCipXTGYDkq4EIH7GhtzZ2Dw'
-  %li
-    = link_to image_tag('google-icon.png'), 'https://plus.google.com/112767306130753951581'
-  %p © PAGLIACCI
-  = Time.now.year
+.row
+  = image_tag 'pagliacci-logo.png', id: 'logo'
+.row
+  #phone-numbers
+    206-726-1717 | 425-453-1717
+.row
+  #delivery-hours
+    DELIVERY 4-11 TODAY!

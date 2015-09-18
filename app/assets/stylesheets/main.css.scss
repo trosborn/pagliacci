@@ -1,10 +1,8 @@
-#application {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 body {
-  background-color: black;
+  background-image: asset-url('catering');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 @font-face {
@@ -22,15 +20,8 @@ body {
   src: asset-url('Carrosserie-Regular.ttf');
 }
 
-#scrollify {
-  background-image: asset-url('paper-background.jpg');
-  max-width: 860px;
-  position: relative;
-  margin-top: 41px;
-}
-
-a:hover {
-  color: #000000;
-  border-bottom: thick solid #A22921;
+#paper {
+  background-image: asset-url('paper-background');
+  background-size: cover;
 }
 
