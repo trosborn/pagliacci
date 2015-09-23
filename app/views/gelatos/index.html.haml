@@ -1,0 +1,10 @@
+- if policy(@gelatos).create?
+  = link_to 'Add New Gelato', controller: 'gelatos', action: 'new'
+%br
+- @gelatos.each do |p|
+  .large-4.columns
+    %b
+      = p.name
+    %br
+    = p.description
+    %br

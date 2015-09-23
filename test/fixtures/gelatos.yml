@@ -1,0 +1,8 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+coffee:
+  name: 'Coffee'
+  description: 'Fresh roasted coffee beans with aged whole milk.'
+  dairy: true
+  id: 1
