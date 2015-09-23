@@ -1,0 +1,8 @@
+= @gelato.name
+#p
+  = @gelato.description
+  - if @gelato.dairy
+    'Contains dairy'
+
+- if policy(@gelato).update?
+  = link_to 'Edit', edit_gelato_path(@gelato)
