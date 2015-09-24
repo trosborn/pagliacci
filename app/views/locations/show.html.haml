@@ -1,0 +1,22 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @location.name
+%p
+  %b Nickname:
+  = @location.nickname
+%p
+  %b Slices:
+  - if @location.slices
+    Serves slices!
+%p
+  %b Seating capacity:
+  Seating Capacity:
+  = @location.seating_capacity
+
+= link_to 'Edit', edit_location_path(@location)
+\|
+= link_to 'Back', locations_path
+\|
+= link_to 'Delete', location_path(@location), method: :delete

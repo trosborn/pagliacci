@@ -19,6 +19,7 @@ feature 'admin can CRUD salads' do
     page.must_have_content '4.99'
     page.must_have_content '7.99'
     page.must_have_content '14.99'
+    page.must_have_content 'Salad was successfully created.'
   end
   scenario 'admin wants to edit a salad' do
     visit salads_path
@@ -37,6 +38,7 @@ feature 'admin can CRUD salads' do
     page.must_have_content '1.11'
     page.must_have_content '2.22'
     page.must_have_content '3.33'
+    page.must_have_content 'Salad was successfully updated.'
   end
   scenario 'admin wants to delete a salad' do
     visit salads_path
