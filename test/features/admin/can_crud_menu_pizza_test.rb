@@ -48,6 +48,7 @@ feature 'Admin Can CRUD Menu Pizzas' do
     page.must_have_content '25.99'
     page.must_have_content 'Active'
     page.must_have_content 'Seasonal'
+    page.must_have_content 'Menu Pizza was successfully created.'
   end
   scenario 'as a site admin, I can edit a pizza' do
     test_pizza = menu_pizzas(:veggie_fresh)
@@ -85,6 +86,7 @@ feature 'Admin Can CRUD Menu Pizzas' do
     page.must_have_content 'Veggie Fresh'
     page.must_have_content 'mushroom'
     page.must_have_content 'red sauce'
+    page.must_have_content 'Menu Pizza was successfully updated.'
   end
   scenario 'as a site admin, I can delete a pizza' do
     test_pizza = menu_pizzas(:veggie_fresh)

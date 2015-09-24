@@ -23,6 +23,7 @@ feature 'Admin Can CRUD Toppings' do
     page.must_have_content 'Name: Ricotta'
     page.must_have_content 'Active'
     page.must_have_content 'Seasonal'
+    page.must_have_content 'Topping was successfully created.'
   end
   scenario 'admin wants to edit a pizza topping' do
     test_topping = toppings(:pepperoni)
@@ -39,6 +40,7 @@ feature 'Admin Can CRUD Toppings' do
     page.must_have_content 'Active'
     page.wont_have_content 'Seasonal'
     page.wont_have_content 'pepperoni'
+    page.must_have_content 'Topping was successfully updated.'
   end
   scenario 'admin wants to delete a pizza topping' do
     test_topping = toppings(:sausage)

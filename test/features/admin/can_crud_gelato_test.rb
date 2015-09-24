@@ -18,6 +18,7 @@ feature 'admin can CRUD gelato' do
     page.must_have_content 'Sweet cream'
     page.must_have_content 'Much cream. So sweet. Wow.'
     page.must_have_content 'Contains dairy'
+    page.must_have_content 'Gelato was successfully created.'
   end
   scenario 'as a site admin, I can edit a gelato' do
     test_gelato = gelatos(:coffee)
@@ -36,6 +37,7 @@ feature 'admin can CRUD gelato' do
     page.wont_have_content 'Fresh roasted coffee beans with aged whole milk.'
     page.must_have_content 'It is like wine in frozen milk'
     page.wont_have_content 'Contains dairy'
+    page.must_have_content 'Gelato was successfully updated.'
   end
   scenario 'as a site admin, I can delete a gelato' do
     test_gelato = gelatos(:coffee)

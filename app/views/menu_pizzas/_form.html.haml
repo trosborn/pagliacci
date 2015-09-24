@@ -11,14 +11,19 @@
   .field
     = f.label :name
     = f.text_area :name
+  .field
     = f.label :description
     = f.text_area :description
+  .field
     = f.label :small_price
     = f.number_field :small_price, step: 'any'
+  .field
     = f.label :medium_price
     = f.number_field :medium_price, step: 'any'
+  .field
     = f.label :large_price
     = f.number_field :large_price, step: 'any'
+  .field
     %ul
       - @toppings.each do |t|
         %li

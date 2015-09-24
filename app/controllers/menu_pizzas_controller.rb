@@ -23,7 +23,7 @@ class MenuPizzasController < ApplicationController
     @menu_pizza = MenuPizza.new(menu_pizza_params)
     respond_to do |format|
       if @menu_pizza.save
-        format.html { redirect_to @menu_pizza, notice: 'Topping was successfully created.' }
+        format.html { redirect_to @menu_pizza, notice: 'Menu Pizza was successfully created.' }
       else
         format.html { render action: 'new' }
       end
@@ -35,7 +35,7 @@ class MenuPizzasController < ApplicationController
     @menu_pizza.attributes = { 'topping_ids' => []}.merge(menu_pizza_params || {} )
     respond_to do |format|
       if @menu_pizza.update(menu_pizza_params)
-        format.html { redirect_to @menu_pizza, notice: 'Pizza was successfully updated.' }
+        format.html { redirect_to @menu_pizza, notice: 'Menu Pizza was successfully updated.' }
       else
         format.html { render action: 'edit' }
       end
