@@ -1,8 +1,12 @@
 .row
   = image_tag 'pagliacci-logo.png', id: 'logo'
 .row
-  #phone-numbers
-    206-726-1717 | 425-453-1717
+  #order-online
+    = link_to 'order.pagliacci.com', alt: 'Order Online' do
+      #{image_tag 'order-online.jpg' , alt: 'Order Online Image'}
 .row
   #delivery-hours
     DELIVERY 4-11 TODAY!
+.row
+  #phone-numbers
+    206-726-1717 | 425-453-1717
