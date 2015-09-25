@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %p
   %b Name:
   = @location.name
@@ -11,8 +9,7 @@
   - if @location.slices
     Serves slices!
 %p
-  %b Seating capacity:
-  Seating Capacity:
+  %b Seating Capacity:
   = @location.seating_capacity
 
 = link_to 'Edit', edit_location_path(@location)

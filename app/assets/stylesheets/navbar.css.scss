@@ -1,5 +1,9 @@
 nav {
   width: 100%;
+  text-align: center;
+  background-color: white !important;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 nav a {
@@ -11,29 +15,6 @@ nav a {
   color: #A22921;
   font: 500 20px/1em 'Carrosserie-Regular', Helvetica, sans-serif;
   border-top: 31px;
-}
-
-#delivery-hours {
-  text-align: center;
-  text-shadow: 0 0 20px #000;
-  font-size: 21px;
-  color: white;
-}
-
-#phone-numbers {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  text-align: center;
-  text-shadow: 0 0 20px #000;
-  font-size: 24px;
-  color: white;
-}
-
-#logo {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
 }
 
 .nav-section a:hover {
