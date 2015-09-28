@@ -18,5 +18,18 @@
   .field
     = f.label :seating_capacity
     = f.number_field :seating_capacity
+  %ul
+    = f.fields_for :address do |address_form|
+      %li
+        = address_form.label :line1
+        = address_form.text_field :line1
+        = address_form.label :line2
+        = address_form.text_field :line2
+        = address_form.label :city
+        = address_form.text_field :city
+        = address_form.label :state
+        = address_form.text_field :state
+        = address_form.label :zip
+        = address_form.text_field :zip
   .actions
     = f.submit 'Save'

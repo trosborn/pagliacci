@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Line1:
+  = @address.line1
+%p
+  %b Line2:
+  = @address.line2
+%p
+  %b City:
+  = @address.city
+%p
+  %b State:
+  = @address.state
+%p
+  %b Zip:
+  = @address.zip
+
+= link_to 'Edit', edit_address_path(@address)
+\|
+= link_to 'Back', addresses_path

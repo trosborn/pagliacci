@@ -11,6 +11,12 @@
 %p
   %b Seating Capacity:
   = @location.seating_capacity
+%p
+  = @location.address.line1
+  = @location.address.line2
+  = @location.address.city
+  = @location.address.state
+  = @location.address.zip
 
 = link_to 'Edit', edit_location_path(@location)
 \|

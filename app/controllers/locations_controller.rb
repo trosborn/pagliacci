@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
+    @location.build_address
   end
 
   def edit
@@ -17,7 +18,6 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params)
-
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
@@ -55,6 +55,6 @@ class LocationsController < ApplicationController
     end
 
     def location_params
-      params.require(:location).permit(:name, :nickname, :slices, :seating_capacity)
+      params.require(:location).permit(:name, :nickname, :slices, :seating_capacity, address_attributes: [:line1, :line2, :city, :state, :zip])
     end
 end
