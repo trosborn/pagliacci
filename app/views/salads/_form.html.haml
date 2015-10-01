@@ -11,12 +11,22 @@
   .field
     = f.label :name
     = f.text_area :name
+  .field
     = f.label :small_price
     = f.number_field :small_price, step: 'any'
+  .field
     = f.label :medium_price
     = f.number_field :medium_price, step: 'any'
+  .field
     = f.label :large_price
     = f.number_field :large_price, step: 'any'
+  .field
+    %ul
+      - @toppings.each do |t|
+        %li
+          = check_box_tag "#{t.name}", t.id, @salad.toppings.include?(t), :name => 'salad[topping_ids][]'
+          %label
+            = t.name
 
   - if @salad.persisted?
     = submit_tag 'Update'

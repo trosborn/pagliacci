@@ -23,3 +23,21 @@ red_sauce:
 
 mushroom:
   name: 'mushroom'
+
+salami:
+  name: 'salami'
+
+garbanzo_beans:
+  name: 'garbanzo beans'
+
+red_onions:
+  name: 'red onions'
+
+kasseri:
+  name: 'kasseri'
+
+red_peppers:
+  name: 'red peppers'
+
+pagliaccio_dressing:
+  name: 'pagliaccio dressing'

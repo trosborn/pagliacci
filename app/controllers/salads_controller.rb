@@ -1,5 +1,6 @@
 class SaladsController < ApplicationController
   before_action :set_salad, only: [:show, :edit, :update, :destroy]
+  before_action :set_toppings, only: [:new, :create, :edit, :update]
   after_action :verify_authorized, except: [:index, :show]
 
   def index
@@ -31,6 +32,7 @@ class SaladsController < ApplicationController
   end
 
   def update
+    @salad.attributes = { 'topping_ids' => []}.merge(salad_params || {} )
     respond_to do |format|
       if @salad.update(salad_params)
         format.html { redirect_to @salad, notice: 'Salad was successfully updated.' }
@@ -49,12 +51,16 @@ class SaladsController < ApplicationController
     authorize @salad, :destroy?
   end
 
-  private
+private
+  def set_toppings
+    @toppings = Topping.all
+  end
+
   def set_salad
     @salad = Salad.find(params[:id])
   end
 
   def salad_params
-    params.require(:salad).permit(:name, :small_price, :medium_price, :large_price)
+    params.require(:salad).permit(:name, :small_price, :medium_price, :large_price, :topping_ids => [])
   end
 end

@@ -1,9 +1,10 @@
-%p#notice= notice
-
 = @salad.name
 = @salad.small_price
 = @salad.medium_price
 = @salad.large_price
+
+- @salad.toppings.each do |t|
+  = t.name
 
 - if policy(@salad).update?
   = link_to 'Edit', edit_salad_path(@salad)
