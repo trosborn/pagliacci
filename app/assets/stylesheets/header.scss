@@ -1,0 +1,18 @@
+#logo {
+  border-top: thick solid $pag-red;
+  max-height: 200px;
+  img {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+}
+
+#order-online {
+  margin-top: 8px;
+  a img {
+    display: block;
+    height: auto;
+    width: 240px;
+  }
+}

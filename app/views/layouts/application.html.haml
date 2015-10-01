@@ -13,9 +13,10 @@
     = render 'layouts/header'
     .row#paper
       = render 'layouts/navbar'
-      %p.notice
-        = notice
-      %p.alert
+      - if flash[:notice]
+        .notice
+          = notice
+      .alert
         = alert
       .large-12.columns
         = yield

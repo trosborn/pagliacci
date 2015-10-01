@@ -1,7 +1,12 @@
 body {
-  background-image: asset-url('repeating-art-paper-background');
+  background-image: asset-url('repeating-dark-wood')
 }
 
+#paper {
+  background-image: asset-url('paper-background');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
 @font-face {
   font-family: 'Knockout Bantamweight';
   src: asset-url('Knockout-HTF47-Bantamweight.ttf');
@@ -15,10 +20,5 @@ body {
 @font-face {
   font-family: 'Carrosserie-Regular';
   src: asset-url('Carrosserie-Regular.ttf');
-}
-
-#paper {
-
-  border-radius: 20px;
 }
 

@@ -1,9 +1,9 @@
 nav {
   width: 100%;
   text-align: center;
-  background-color: white !important;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+  background-color: transparent !important;
 }
 
 nav a {
@@ -12,7 +12,6 @@ nav a {
   margin: 0 0 0 0;
   width: 33%;
   height: 33%;
-  color: #A22921;
   font: 500 20px/1em 'Carrosserie-Regular', Helvetica, sans-serif;
   border-top: 31px;
 }
