@@ -1,0 +1,46 @@
+.promos {
+  border-style: solid;
+  border-color: black;
+  padding: 0;
+  overflow: hidden;
+  border-width: 6px;
+  background-color: white;
+  h1, h2, h3 {
+    color: $pag-red;
+  }
+  & {
+    text-align: center;
+  }
+}
+
+.left-rounded {
+  border-top-left-radius: 32px;
+}
+
+.right-rounded {
+  border-top-right-radius: 32px;
+}
+
+.red-underline {
+  text-decoration: underline;
+}
+
+.red-bg {
+  background-color: $pag-red;
+}
+
+.black-bg {
+  background-color: black;
+}
+
+.transparent-bg {
+  background-color: transparent;
+}
+
+.tan-bg {
+  background-color: #D2B48C;
+}
+
+.white-bg {
+  background-color: white;
+}
