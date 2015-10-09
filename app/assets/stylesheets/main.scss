@@ -1,12 +1,19 @@
 body {
-  background-image: asset-url('repeating-dark-wood')
+  background-image: asset-url('purty-wood.png');
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-sans-serif;
 }
 
 #paper {
-  background-image: asset-url('paper-background');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-image: asset-url('cream-paper.png');
+  border-image: asset-url('dark-wood.png') 1rem 1rem round;
+  font-family: $font-family-serif;
+  box-shadow: 0.4rem 0.4rem 0.2rem black;
 }
+
 @font-face {
   font-family: 'Knockout Bantamweight';
   src: asset-url('Knockout-HTF47-Bantamweight.ttf');

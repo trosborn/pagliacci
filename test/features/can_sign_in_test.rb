@@ -3,8 +3,8 @@ require 'helpers/test_helper'
 feature 'Account access' do
   scenario 'I want to create a new account' do
     visit new_user_session_path
-    click_on 'Sign up'
 
+    click_on 'Sign up'
     fill_in 'Email', with: 'yolo@example.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
