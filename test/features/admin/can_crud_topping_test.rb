@@ -17,7 +17,6 @@ feature 'Admin Can CRUD Toppings' do
     fill_in 'Name', with: 'ricotta'
     check 'topping[active]'
     check 'topping[seasonal]'
-
     click_on 'Create'
 
     page.must_have_content 'Name: Ricotta'
@@ -28,12 +27,11 @@ feature 'Admin Can CRUD Toppings' do
   scenario 'admin wants to edit a pizza topping' do
     test_topping = toppings(:pepperoni)
     visit topping_path test_topping
-    click_on 'Edit'
 
+    click_on 'Edit'
     fill_in 'Name', with: 'spicy pepp'
     check 'topping[active]'
     uncheck 'topping[seasonal]'
-
     click_on 'Update'
 
     page.must_have_content 'Spicy pepp'

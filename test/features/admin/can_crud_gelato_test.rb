@@ -12,7 +12,6 @@ feature 'admin can CRUD gelato' do
     fill_in 'Name', with: 'Sweet cream'
     fill_in 'Description', with: 'Much cream. So sweet. Wow.'
     check 'gelato[dairy]'
-
     click_on 'Create'
 
     page.must_have_content 'Sweet cream'
@@ -22,14 +21,12 @@ feature 'admin can CRUD gelato' do
   end
   scenario 'as a site admin, I can edit a gelato' do
     test_gelato = gelatos(:coffee)
-
     visit gelato_path test_gelato
-    click_on 'Edit'
 
+    click_on 'Edit'
     fill_in 'Name', with: 'Grape'
     fill_in 'Description', with: 'It is like wine in frozen milk'
     uncheck 'gelato[dairy]'
-
     click_on 'Update'
 
     page.wont_have_content 'Coffee'
@@ -41,8 +38,8 @@ feature 'admin can CRUD gelato' do
   end
   scenario 'as a site admin, I can delete a gelato' do
     test_gelato = gelatos(:coffee)
-
     visit edit_gelato_path test_gelato
+
     click_on 'Delete'
 
     page.wont_have_content 'Coffee'
@@ -51,6 +48,7 @@ feature 'admin can CRUD gelato' do
     visit new_gelato_path
 
     click_on 'Create'
+
     page.must_have_content "Name can't be blank"
   end
 end
