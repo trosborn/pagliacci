@@ -16,23 +16,18 @@ feature 'Admin Can CRUD Menu Pizzas' do
 
     click_on 'Add New Pizza'
     fill_in 'Name', with: 'Brooklyn Bridge'
-
     fill_in 'Description', with: "Pepperoni, Cascioppo Bros. Italian sausage,
     Ostrom's mushrooms, olives, green peppers, onions and mozzarella over our
     seasoned tomato sauce."
-
     fill_in 'Small price', with: 18.49
     fill_in 'Medium price', with: 22.49
     fill_in 'Large price', with: 25.99
-
     check 'pepperoni'
     check 'mushroom'
     check 'mozzarella'
     check 'red_sauce'
-
     check 'menu_pizza[active]'
     check 'menu_pizza[seasonal]'
-
     click_on 'Create'
 
     page.must_have_content 'Brooklyn Bridge'
@@ -52,24 +47,18 @@ feature 'Admin Can CRUD Menu Pizzas' do
   end
   scenario 'as a site admin, I can edit a pizza' do
     test_pizza = menu_pizzas(:veggie_fresh)
-
     visit menu_pizza_path test_pizza
+
     click_on 'Edit'
-
     fill_in 'Name', with: 'Veggie Fresh'
-
     fill_in 'Description', with: 'All the veggies'
-
     fill_in 'Small price', with: 17.49
     fill_in 'Medium price', with: 21.49
     fill_in 'Large price', with: 24.99
-
     check 'mushroom'
     check 'red_sauce'
-
     uncheck 'menu_pizza[active]'
     check 'menu_pizza[seasonal]'
-
     click_on 'Update'
 
     page.wont_have_content 'Veggies and stuff'
@@ -100,6 +89,7 @@ feature 'Admin Can CRUD Menu Pizzas' do
     visit new_menu_pizza_path
 
     click_on 'Create'
+
     page.must_have_content "Name can't be blank"
   end
 end

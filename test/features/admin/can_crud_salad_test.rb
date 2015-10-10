@@ -6,20 +6,18 @@ feature 'admin can CRUD salads' do
   end
   scenario 'admin wants to create a salad' do
     visit salads_path
+
     click_on 'Add New Salad'
     fill_in 'Name', with: 'Pagliaccio'
-
     fill_in 'Small price', with: 4.99
     fill_in 'Medium price', with: 7.99
     fill_in 'Large price', with: 14.99
-
     check 'salami'
     check 'garbanzo_beans'
     check 'kasseri'
     check 'red_onions'
     check 'red_peppers'
     check 'pagliaccio_dressing'
-
     click_on 'Create'
 
     page.must_have_content 'Pagliaccio'
@@ -38,13 +36,10 @@ feature 'admin can CRUD salads' do
     visit salads_path
 
     click_on 'Edit Caesar Salad'
-
     fill_in 'Name', with: 'Brutus'
-
     fill_in 'Small price', with: 1.11
     fill_in 'Medium price', with: 2.22
     fill_in 'Large price', with: 3.33
-
     click_on 'Update'
 
     page.must_have_content 'Brutus'

@@ -5,7 +5,6 @@ feature 'admin can CRUD locations' do
     visit locations_path
 
     click_on 'New Location'
-
     fill_in 'Name', with: 'Lake City Way'
     fill_in 'Nickname', with: 'LCW'
     check 'Slices'
@@ -14,7 +13,6 @@ feature 'admin can CRUD locations' do
     fill_in 'City', with: 'Seattle'
     fill_in 'State', with: 'WA'
     fill_in 'Zip', with: '98117'
-
     click_on 'Save'
 
     page.must_have_content 'Lake City Way'
@@ -29,7 +27,6 @@ feature 'admin can CRUD locations' do
   end
   scenario 'as an admin, I can edit a location' do
     test_location = locations(:lake_city_way)
-
     visit location_path test_location
 
     click_on 'Edit'
@@ -41,7 +38,6 @@ feature 'admin can CRUD locations' do
     fill_in 'City', with: 'Mexico City'
     fill_in 'State', with: 'VA'
     fill_in 'Zip', with: '11111'
-
     click_on 'Save'
 
     page.must_have_content 'Tahoma'
@@ -56,7 +52,6 @@ feature 'admin can CRUD locations' do
   end
   scenario 'as an admin, I can delete a location' do
     test_location = locations(:lake_city_way)
-
     visit location_path test_location
 
     click_on 'Delete'
