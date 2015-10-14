@@ -1,0 +1,28 @@
+#menu-nav {
+  margin-top: 1rem;
+  div {
+    border-bottom: thick solid black;
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 500;
+    }
+    ul {
+      display: inline;
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.menu-section {
+  border-bottom: 3px solid black;
+}
+
+#pies {
+  width: 100%;
+}
+
+#salads {
+  width: 100%;
+}

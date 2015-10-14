@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :addresses
+  root 'welcome#index'
 
+  get 'menu', to: 'menu#index'
+
+  resources :addresses
   resources :locations
   resources :menu_pizzas
   resources :toppings
@@ -8,5 +11,4 @@ Rails.application.routes.draw do
   resources :gelatos
 
   devise_for :users
-  root 'welcome#index'
 end

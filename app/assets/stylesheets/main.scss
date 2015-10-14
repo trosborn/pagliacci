@@ -1,5 +1,5 @@
 body {
-  background-image: asset-url('purty-wood.png');
+  background-image: asset-url('chicken-primo.jpg');
   background-attachment: fixed;
 }
 
@@ -11,7 +11,6 @@ h1, h2, h3, h4, h5, h6 {
   background-image: asset-url('cream-paper.png');
   border-image: asset-url('dark-wood.png') 1rem 1rem round;
   font-family: $font-family-serif;
-  box-shadow: 0.4rem 0.4rem 0.2rem black;
 }
 
 @font-face {
