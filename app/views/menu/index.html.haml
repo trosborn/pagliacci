@@ -1,48 +1,109 @@
-- @seasonal_toppings.each do |seasonal_topping|
-  %p.medium-4.large-4.columns
-    %b
-      = seasonal_topping.name
-    %br
+.row
+  .large-12.columns#menu-nav
+    %div
+      %h1
+        DELIVERY MENU
+        %ul
+          %li
+            = link_to 'Pies', '#pies'
+          %li
+            = link_to 'Salads', '#salads'
+          %li
+            = link_to 'Pasta', '#pasta'
+          %li
+            = link_to 'Beverages', '#beverages'
+          %li
+            = link_to 'Appetizers', '#appetizers'
 
-- @menu_toppings.each do |menu_toppings|
-  %p.medium-4.large-4.columns
-    %b
-      = menu_toppings.name
-    %br
+.row
+  .large-4.columns#seasonal-pizzas
+    %h2.menu-section
+      SEASONAL PIZZAS
+    - @seasonal_pizzas.each do |seasonal_pizzas|
+      %p
+        %b
+          = seasonal_pizzas.name.upcase
+        %br
+        = seasonal_pizzas.description
+        %br
+        = seasonal_pizzas.small_price
+        •
+        = seasonal_pizzas.medium_price
+        •
+        = seasonal_pizzas.large_price
+  .large-8.columns#toppings
+    %h2.menu-section
+      CREATE YOUR OWN
+    .row
+      .large-6.columns
+        %p
+          %b
+            VEGETABLE TOPPINGS
+          %br
+          - @veggie_toppings.each do |veggie_topping|
+            - if veggie_topping != @veggie_toppings.last
+              = veggie_topping.name + ','
+            - else
+              = veggie_topping.name
+      .large-6.columns
+        %p
+          %b
+            CHEESE TOPPINGS
+          %br
+          - @cheese_toppings.each do |cheese_topping|
+            - if cheese_topping != @cheese_toppings.last
+              = cheese_topping.name + ','
+            - else
+              = cheese_topping.name
+    .row
+      .large-6.columns
+        %p
+          %b
+            MEAT TOPPINGS
+          %br
+          - @meat_toppings.each do |meat_topping|
+            - if meat_topping != @meat_toppings.last
+              = meat_topping.name + ','
+            - else
+              = meat_topping.name
 
-- @seasonal_pizzas.each do |seasonal_pizzas|
-  %p.medium-4.large-4.columns
-    %b
-      = seasonal_pizzas.name
-    %br
-    = seasonal_pizzas.description
-    %br
-    = seasonal_pizzas.small_price
-    •
-    = seasonal_pizzas.medium_price
-    •
-    = seasonal_pizzas.large_price
+.row
+  .large-12.columns#pies
+    .menu-section
+      %h2
+        PAGLIACCI FAVORITES
+.row
+  - @menu_pizzas.each do |menu_pizzas|
+    %p.medium-4.large-4.columns
+      %b
+        = menu_pizzas.name.upcase
+      %br
+      = menu_pizzas.description
+      %br
+      = menu_pizzas.small_price
+      •
+      = menu_pizzas.medium_price
+      •
+      = menu_pizzas.large_price
+.row
+  .large-12.columns#salads
+    .menu-section
+      %h2
+        SALADS
+.row
+  - @salads.each do |salad|
+    %p.medium-4.large-3.columns
+      %b
+        = salad.name.upcase
+      %br
+      = salad.description
+      %br
+      = salad.small_price
+      •
+      = salad.medium_price
+      •
+      = salad.large_price
 
-- @menu_pizzas.each do |menu_pizzas|
-  %p.medium-4.large-4.columns
-    %b
-      = menu_pizzas.name
-    %br
-    = menu_pizzas.description
-    %br
-    = menu_pizzas.small_price
-    •
-    = menu_pizzas.medium_price
-    •
-    = menu_pizzas.large_price
-
-- @salads.each do |salad|
-  %p.medium-4.large-4.columns
-    %b
-      = salad.name
-    %br
-    = salad.small_price
-    •
-    = salad.medium_price
-    •
-    = salad.large_price
+.row
+  - @gelatos.each do |gelato|
+    = gelato.name.upcase

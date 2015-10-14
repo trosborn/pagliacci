@@ -1,7 +1,21 @@
 pepperoni:
   name: 'pepperoni'
-  seasonal: true
+  active: true
+  seasonal: false
+  meat: true
   id: 1
+
+cheese_burger:
+  name: 'cheese burger'
+  active: true
+  meat: true
+  seasonal: true
+
+crack_burger:
+  name: 'crack burger'
+  meat: true
+  active: false
+  seasonal: true
 
 sausage:
   name: 'sausage'
