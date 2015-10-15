@@ -4,13 +4,6 @@ feature 'Admin Can CRUD Menu Pizzas' do
   before :each do
     sign_in :admin
   end
-  scenario 'as a site admin, I can view a pizza' do
-    test_pizza = menu_pizzas(:veggie_fresh)
-
-    visit menu_pizza_path test_pizza
-
-    page.must_have_content 'Veggie Phresh'
-  end
   scenario 'as a site admin, I can create a pizza' do
     visit menu_pizzas_path
 
@@ -28,7 +21,7 @@ feature 'Admin Can CRUD Menu Pizzas' do
     check 'red_sauce'
     check 'menu_pizza[active]'
     check 'menu_pizza[seasonal]'
-    click_on 'Create'
+    click_on 'Save'
 
     page.must_have_content 'Brooklyn Bridge'
     page.must_have_content "Pepperoni, Cascioppo Bros. Italian sausage,
@@ -49,7 +42,7 @@ feature 'Admin Can CRUD Menu Pizzas' do
     test_pizza = menu_pizzas(:veggie_fresh)
     visit menu_pizza_path test_pizza
 
-    click_on 'Edit'
+    click_on edit
     fill_in 'Name', with: 'Veggie Fresh'
     fill_in 'Description', with: 'All the veggies'
     fill_in 'Small price', with: 17.49
@@ -59,7 +52,7 @@ feature 'Admin Can CRUD Menu Pizzas' do
     check 'red_sauce'
     uncheck 'menu_pizza[active]'
     check 'menu_pizza[seasonal]'
-    click_on 'Update'
+    click_on 'Save'
 
     page.wont_have_content 'Veggies and stuff'
     page.must_have_content 'All the veggies'
@@ -84,11 +77,12 @@ feature 'Admin Can CRUD Menu Pizzas' do
     click_on 'Delete'
 
     page.wont_have_content 'Veggie Phresh'
+    page.must_have_content 'Menu Pizza was successfully destroyed.'
   end
   scenario 'as a site admin, I am prevented from creating a pizza without a name' do
     visit new_menu_pizza_path
 
-    click_on 'Create'
+    click_on 'Save'
 
     page.must_have_content "Name can't be blank"
   end

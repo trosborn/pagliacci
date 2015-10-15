@@ -9,18 +9,19 @@ class MenuPizzasController < ApplicationController
 
   def new
     @menu_pizza = MenuPizza.new
-    authorize @menu_pizza, :new?
+    authorize @menu_pizza
   end
 
   def show
   end
 
   def edit
-    authorize @menu_pizza, :edit?
+    authorize @menu_pizza
   end
 
   def create
     @menu_pizza = MenuPizza.new(menu_pizza_params)
+    authorize @menu_pizza
     respond_to do |format|
       if @menu_pizza.save
         format.html { redirect_to @menu_pizza, notice: 'Menu Pizza was successfully created.' }
@@ -28,11 +29,11 @@ class MenuPizzasController < ApplicationController
         format.html { render action: 'new' }
       end
     end
-    authorize @menu_pizza, :create?
   end
 
   def update
     @menu_pizza.attributes = { 'topping_ids' => []}.merge(menu_pizza_params || {} )
+    authorize @menu_pizza
     respond_to do |format|
       if @menu_pizza.update(menu_pizza_params)
         format.html { redirect_to @menu_pizza, notice: 'Menu Pizza was successfully updated.' }
@@ -40,15 +41,14 @@ class MenuPizzasController < ApplicationController
         format.html { render action: 'edit' }
       end
     end
-    authorize @menu_pizza, :update?
   end
 
   def destroy
+    authorize @menu_pizza
     @menu_pizza.destroy
     respond_to do |format|
-      format.html { redirect_to menu_pizzas_url }
+      format.html { redirect_to menu_pizzas_url, notice: 'Menu Pizza was successfully destroyed.' }
     end
-    authorize @menu_pizza, :destroy?
   end
 
 private

@@ -44,7 +44,7 @@ class ToppingsController < ApplicationController
   def destroy
     @topping.destroy
     respond_to do |format|
-      format.html { redirect_to toppings_url }
+      format.html { redirect_to toppings_url, notice: 'Topping was successfully destroyed.' }
     end
     authorize @topping, :destroy?
   end

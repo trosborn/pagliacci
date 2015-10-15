@@ -13,11 +13,11 @@ feature 'Admin Can CRUD Toppings' do
   scenario 'admin wants to create pizza topping' do
     visit toppings_path
 
-    click_on 'Create Pizza Topping'
+    click_on 'Add New Pizza Topping'
     fill_in 'Name', with: 'ricotta'
     check 'topping[active]'
     check 'topping[seasonal]'
-    click_on 'Create'
+    click_on 'Save'
 
     page.must_have_content 'Name: Ricotta'
     page.must_have_content 'Active'
@@ -28,11 +28,11 @@ feature 'Admin Can CRUD Toppings' do
     test_topping = toppings(:pepperoni)
     visit topping_path test_topping
 
-    click_on 'Edit'
+    click_on edit
     fill_in 'Name', with: 'spicy pepp'
     check 'topping[active]'
     uncheck 'topping[seasonal]'
-    click_on 'Update'
+    click_on 'Save'
 
     page.must_have_content 'Spicy pepp'
     page.must_have_content 'Active'
@@ -48,5 +48,6 @@ feature 'Admin Can CRUD Toppings' do
     click_on 'Delete'
 
     page.wont_have_content 'sausage'
+    page.must_have_content 'Topping was successfully destroyed.'
   end
 end

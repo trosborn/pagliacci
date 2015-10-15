@@ -1,0 +1,18 @@
+%p
+  %b Name:
+  = @beverage.name
+%p
+  %b Description:
+  = @beverage.description
+%p
+  %b Single price:
+  = @beverage.single_price
+%p
+  %b Six price:
+  = @beverage.six_price
+
+= link_to 'Back', beverages_path
+- if policy(@beverage).update?
+  = link_to 'Edit', edit_beverage_path(@beverage)
+  = link_to 'Delete', beverage_path(@beverage), method: :delete
+

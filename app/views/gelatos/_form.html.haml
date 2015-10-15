@@ -15,8 +15,8 @@
     = f.text_area :description
     = f.label :dairy
     = f.check_box :dairy
+  = submit_tag 'Save'
   - if @gelato.persisted?
-    = submit_tag 'Update'
     = link_to 'Delete', gelato_path(@gelato), method: :delete
-  - else
-    = submit_tag 'Create'
+
+

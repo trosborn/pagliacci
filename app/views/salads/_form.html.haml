@@ -28,8 +28,7 @@
           %label
             = t.name
 
+  = submit_tag 'Save'
   - if @salad.persisted?
-    = submit_tag 'Update'
     = link_to 'Delete', salad_path(@salad), method: :delete
-  - else
-    = submit_tag 'Create'
+

@@ -12,15 +12,16 @@ class SaladsController < ApplicationController
 
   def new
     @salad = Salad.new
-    authorize @salad, :new?
+    authorize @salad
   end
 
   def edit
-    authorize @salad, :edit?
+    authorize @salad
   end
 
   def create
     @salad = Salad.new(salad_params)
+    authorize @salad
     respond_to do |format|
       if @salad.save
         format.html { redirect_to @salad, notice: 'Salad was successfully created.' }
@@ -28,10 +29,10 @@ class SaladsController < ApplicationController
         format.html { render action: 'new' }
       end
     end
-    authorize @salad, :create?
   end
 
   def update
+    authorize @salad
     @salad.attributes = { 'topping_ids' => []}.merge(salad_params || {} )
     respond_to do |format|
       if @salad.update(salad_params)
@@ -40,15 +41,14 @@ class SaladsController < ApplicationController
         format.html { render action: 'edit' }
       end
     end
-    authorize @salad, :update?
   end
 
   def destroy
+    authorize @salad
     @salad.destroy
     respond_to do |format|
-      format.html { redirect_to salads_url }
+      format.html { redirect_to salads_url, notice: 'Salad was successfully destroyed.' }
     end
-    authorize @salad, :destroy?
   end
 
 private

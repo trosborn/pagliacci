@@ -41,7 +41,7 @@ class GelatosController < ApplicationController
   def destroy
     @gelato.destroy
     respond_to do |format|
-      format.html { redirect_to gelatos_url }
+      format.html { redirect_to gelatos_url, notice: 'Gelato was successfully destroyed.' }
     end
     authorize @gelato, :destroy?
   end

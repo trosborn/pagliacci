@@ -8,11 +8,10 @@ feature 'admin can CRUD gelato' do
     visit gelatos_path
 
     click_on 'Add New Gelato'
-
     fill_in 'Name', with: 'Sweet cream'
     fill_in 'Description', with: 'Much cream. So sweet. Wow.'
     check 'gelato[dairy]'
-    click_on 'Create'
+    click_on 'Save'
 
     page.must_have_content 'Sweet cream'
     page.must_have_content 'Much cream. So sweet. Wow.'
@@ -23,11 +22,11 @@ feature 'admin can CRUD gelato' do
     test_gelato = gelatos(:coffee)
     visit gelato_path test_gelato
 
-    click_on 'Edit'
+    click_on edit
     fill_in 'Name', with: 'Grape'
     fill_in 'Description', with: 'It is like wine in frozen milk'
     uncheck 'gelato[dairy]'
-    click_on 'Update'
+    click_on 'Save'
 
     page.wont_have_content 'Coffee'
     page.must_have_content 'Grape'
@@ -43,11 +42,12 @@ feature 'admin can CRUD gelato' do
     click_on 'Delete'
 
     page.wont_have_content 'Coffee'
+    page.must_have_content 'Gelato was successfully destroyed.'
   end
   scenario 'as a site admin, I am prevented from creating a gelato without a name' do
     visit new_gelato_path
 
-    click_on 'Create'
+    click_on 'Save'
 
     page.must_have_content "Name can't be blank"
   end
