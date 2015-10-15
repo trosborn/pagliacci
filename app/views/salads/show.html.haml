@@ -8,3 +8,4 @@
 
 - if policy(@salad).update?
   = link_to 'Edit', edit_salad_path(@salad)
+  = link_to 'Delete', salad_path(@salad), method: :delete

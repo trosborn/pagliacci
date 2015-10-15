@@ -20,3 +20,11 @@ def sign_in role
   fill_in 'Password', with: 'password'
   click_on 'Log in'
 end
+
+def edit
+  'Edit'
+end
+
+def delete
+  'Delete'
+end

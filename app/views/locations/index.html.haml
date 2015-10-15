@@ -5,8 +5,10 @@
     = location.slices
     = location.seating_capacity
     = link_to 'Show', location
-    = link_to 'Edit', edit_location_path(location)
-    = link_to 'Destroy', location, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    - if policy(@locations).update?
+      = link_to 'Edit', edit_location_path(location)
+      = link_to 'Destroy', location, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %br
 
-= link_to 'New Location', new_location_path
+- if policy(@locations).update?
+  = link_to 'New Location', new_location_path

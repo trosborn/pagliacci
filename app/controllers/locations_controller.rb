@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
+    authorize @location
     @location.build_address
   end
 
@@ -18,6 +19,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params)
+    authorize @location
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }

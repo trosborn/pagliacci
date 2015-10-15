@@ -14,5 +14,4 @@
     •
     = s.large_price
     - if policy(@salads).update?
-      = link_to "Edit #{s.name.capitalize} Salad", edit_salad_path(s)
-      = link_to "Delete #{s.name.capitalize} Salad", salad_path(s), method: :delete
+      = link_to 'Edit', edit_salad_path(s)

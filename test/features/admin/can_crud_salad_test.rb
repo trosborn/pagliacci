@@ -18,7 +18,7 @@ feature 'admin can CRUD salads' do
     check 'red_onions'
     check 'red_peppers'
     check 'pagliaccio_dressing'
-    click_on 'Create'
+    click_on 'Save'
 
     page.must_have_content 'Pagliaccio'
     page.must_have_content '4.99'
@@ -33,14 +33,15 @@ feature 'admin can CRUD salads' do
     page.must_have_content 'Salad was successfully created.'
   end
   scenario 'admin wants to edit a salad' do
-    visit salads_path
+    test_salad = salads(:caesar)
+    visit salad_path test_salad
 
-    click_on 'Edit Caesar Salad'
+    click_on edit
     fill_in 'Name', with: 'Brutus'
     fill_in 'Small price', with: 1.11
     fill_in 'Medium price', with: 2.22
     fill_in 'Large price', with: 3.33
-    click_on 'Update'
+    click_on 'Save'
 
     page.must_have_content 'Brutus'
     page.must_have_content '1.11'
@@ -49,10 +50,12 @@ feature 'admin can CRUD salads' do
     page.must_have_content 'Salad was successfully updated.'
   end
   scenario 'admin wants to delete a salad' do
-    visit salads_path
+    test_salad = salads(:caesar)
+    visit salad_path test_salad
 
-    click_on 'Delete Caesar Salad'
+    click_on 'Delete'
 
     page.wont_have_content 'Caesar Salad'
+    page.must_have_content 'Salad was successfully destroyed.'
   end
 end

@@ -1,6 +1,9 @@
 require 'helpers/test_helper'
 
 feature 'admin can CRUD locations' do
+  before :each do
+    sign_in :admin
+  end
   scenario 'as an admin, I can create a location' do
     visit locations_path
 
@@ -29,7 +32,7 @@ feature 'admin can CRUD locations' do
     test_location = locations(:lake_city_way)
     visit location_path test_location
 
-    click_on 'Edit'
+    click_on edit
     fill_in 'Name', with: 'Tahoma'
     fill_in 'Nickname', with: 'OG Tacoma'
     fill_in 'location[seating_capacity]', with: '99'
@@ -49,6 +52,7 @@ feature 'admin can CRUD locations' do
     page.must_have_content 'Mexico City'
     page.must_have_content 'VA'
     page.must_have_content '11111'
+    page.must_have_content 'Location was successfully updated.'
   end
   scenario 'as an admin, I can delete a location' do
     test_location = locations(:lake_city_way)
@@ -60,5 +64,6 @@ feature 'admin can CRUD locations' do
     page.wont_have_content 'LCW'
     page.wont_have_content 'Servies Slices!'
     page.wont_have_content 'Seating Capacity: 24'
+    page.must_have_content 'Location was successfully destroyed.'
   end
 end

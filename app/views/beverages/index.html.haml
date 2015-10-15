@@ -1,0 +1,27 @@
+%h1 Listing beverages
+- if policy(@beverages).update?
+  = link_to 'Add New Beverage', new_beverage_path
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Single price
+      %th Six price
+      %th
+      %th
+      %th
+
+  %tbody
+    - @beverages.each do |beverage|
+      %tr
+        %td= beverage.name
+        %td= beverage.description
+        %td= beverage.single_price
+        %td= beverage.six_price
+        %td= link_to 'Show', beverage
+        - if policy(@beverages).update?
+          %td= link_to 'Edit', edit_beverage_path(beverage)
+          %td= link_to 'Destroy', beverage, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+

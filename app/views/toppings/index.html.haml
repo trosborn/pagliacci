@@ -1,5 +1,5 @@
 - if policy(@toppings).create?
-  = link_to 'Create Pizza Topping', controller: 'toppings', action: 'new'
+  = link_to 'Add New Pizza Topping', controller: 'toppings', action: 'new'
 - @toppings.each do |t|
   = t.name
   - if policy(@toppings).update?

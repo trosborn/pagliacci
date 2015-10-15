@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :beverages
+
   root 'welcome#index'
 
   get 'menu', to: 'menu#index'
