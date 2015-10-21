@@ -14,7 +14,8 @@
             = link_to 'Beverages', '#beverages'
           %li
             = link_to 'Appetizers', '#appetizers'
-
+          %li
+            = link_to 'Gelatos', '#gelatos'
 .row
   .large-4.columns#seasonal-pizzas
     %h2.menu-section
@@ -40,33 +41,20 @@
           %b
             VEGETABLE TOPPINGS
           %br
-          - @veggie_toppings.each do |veggie_topping|
-            - if veggie_topping != @veggie_toppings.last
-              = veggie_topping.name + ','
-            - else
-              = veggie_topping.name
+          = add_commas_to_product @veggie_toppings
       .large-6.columns
         %p
           %b
             CHEESE TOPPINGS
           %br
-          - @cheese_toppings.each do |cheese_topping|
-            - if cheese_topping != @cheese_toppings.last
-              = cheese_topping.name + ','
-            - else
-              = cheese_topping.name
+          = add_commas_to_product @cheese_toppings
     .row
       .large-6.columns
         %p
           %b
             MEAT TOPPINGS
           %br
-          - @meat_toppings.each do |meat_topping|
-            - if meat_topping != @meat_toppings.last
-              = meat_topping.name + ','
-            - else
-              = meat_topping.name
-
+          = add_commas_to_product @meat_toppings
 .row
   .large-12.columns#pies
     .menu-section
@@ -103,7 +91,21 @@
       = salad.medium_price
       •
       = salad.large_price
-
 .row
-  - @gelatos.each do |gelato|
-    = gelato.name.upcase
+  .large-4.columns#gelatos
+    .menu-section
+      %h2
+        GELATOS
+    %p
+      Hand-crafted gelato made locally by
+      = link_to 'Gelatiamo.', 'gelatiamo.com'
+      Available by the pint in
+      = add_commas_to_product @gelatos
+  .large-4.columns#beverages
+    .menu-section
+      %h2
+        BEVERAGES
+    %p
+      = add_commas_to_product @beverages
+
+
