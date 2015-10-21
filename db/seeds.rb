@@ -3,18 +3,18 @@
   Lil’s Peppers", "Ostrom's Mushrooms", "Olives", "Onions", "Pesto",
   "Pineapple", "Red Onions", "Spinach", "Fresh Tomatoes",
   "Sun-Ripened Tomatoes", "Thyme-Roasted Artichoke Hearts"].each do |t|
-  Topping.create(name: "#{t}", veggie: true)
+  Topping.create(name: "#{t}", veggie: true, active: true, seasonal: false)
 end
 
-["Feta", "Fontina", "Laura", "Chenel's Goat Cheese", "Gorgonzola",
+["Feta", "Fontina", "Laura Chenel's Goat Cheese", "Gorgonzola",
   "Extra Mozzarella", "Fresh Mozzarella", "Ricotta"].each do |t|
-  Topping.create(name: "#{t}", cheese: true)
+  Topping.create(name: "#{t}", cheese: true, active: true, seasonal: false)
 end
 
 ["Anchovies", "Hempler's Canadian Bacon", "Marinated Chicken",
   "Isernio's Chicken Sausage", "Cascioppo Bros Italian Sausage",
   "Pepperoni", "La Quercia Prosciutto", "Salami", "Salumi's Spicy Pepperoni"].each do |m|
-  Topping.create(name: "#{m}", meat: true)
+  Topping.create(name: "#{m}", meat: true, active: true, seasonal: false)
 end
 
 25.times do MenuPizza.create(name: 'The Original',
@@ -30,27 +30,34 @@ MenuPizza.create(name: 'Peachza Primo',
 
 MenuPizza.create(name: 'Matador Primo',
   description: "Featuring La Quercia 'nduja, Castelvetrano olives, Manchego cheese and fresh mozzarella over a crushed Italian tomato base.
-  Castelvetrano olives will also be available as a topping for any of your other favorite pizzas."
+  Castelvetrano olives will also be available as a topping for any of your other favorite pizzas.",
   small_price: 21.99, medium_price: 23.99, large_price: 27.99, seasonal: true, active: true)
 
-Salad.create(name: 'Sicilian Chicken Salad',
+Salad.create(name: 'Sicilian Chicken',
   description: "Mixed greens and arugula combined with chicken, thyme roasted artichokes, currants, sun-ripened tomatoes and kasseri cheese tossed in a spicy,
   vinaigrette.",
   small_price: 6.99, medium_price: 7.99, large_price: 11.99)
 
-Salad.create(name: 'Pagliaccio Salad',
+Salad.create(name: 'Pagliaccio',
   description: 'Green leaf lettuce tossed with garbanzo beans, diced red peppers, kasseri cheese, salami, red onions and our Dijon vinaigrette.',
   small_price: 5.49, medium_price: 7.49, large_price: 10.49)
 
-Salad.create(name: 'Caesar Salad',
+Salad.create(name: 'Caesar',
   description: "Romaine lettuce tossed with Parmesan, croutons handmade by Macrina Bakery and our Caesar dressing.",
   small_price: 5.49, medium_price: 7.49, large_price: 10.49)
 
-Salad.create(name: 'Pesto Salad',
+Salad.create(name: 'Pesto',
   description: "Pasta, sweet peas, and thyme-roasted artichoke hearts tossed with creamy pesto dressing.",
   small_price: 6.99, medium_price: 8.99, large_price: 10.49)
 
-Gelato.create(name: 'Panna', description: "Vanilla. Duh.", dairy: true)
-Gelato.create(name: 'Lemon', description: "No one orders this shit", dairy: false)
+Gelato.create(name: 'Sweet Cream (Panna)', dairy: true, active: true)
+Gelato.create(name: 'Chocolate', dairy: true, active: true)
+Gelato.create(name: 'Chocolate Chip Mint', dairy: true, active: true)
+Gelato.create(name: 'Salted Caramel', dairy: true, active: true)
+Gelato.create(name: 'Lemon', dairy: false, active: true)
+Gelato.create(name: 'Raspberry', dairy: false, active: true)
 
-
+Beverage.create(name: 'Mexican Coke')
+['Coke', 'Sprite', 'Root Beer', 'Diet Coke', 'San Pellegrino'].each do |b|
+  Beverage.create(name: "#{b}", single_price: '1.09', six_price: '4.49')
+end
