@@ -1,11 +1,11 @@
 = @salad.name
-= @salad.small_price
-= @salad.medium_price
-= @salad.large_price
-
+= @salad.description
+- unless @salad.sizes.nil?
+  - @salad.sizes.each do |s|
+    = s.name
+    = s.price
 - @salad.toppings.each do |t|
   = t.name
-
 - if policy(@salad).update?
   = link_to 'Edit', edit_salad_path(@salad)
   = link_to 'Delete', salad_path(@salad), method: :delete

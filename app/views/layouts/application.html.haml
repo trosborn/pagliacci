@@ -13,7 +13,7 @@
     - if user_signed_in?
       = link_to 'Log out', destroy_user_session_path, method: :delete
     - else
-      = link_to 'Sign in or create an account', 'new_user_sesion_path'
+      = link_to 'Sign in or create an account', new_user_session_path
     = render 'layouts/header'
     = render 'layouts/order_bar'
     .row#paper

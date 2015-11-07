@@ -1,0 +1,14 @@
+small_caesar:
+  name: Small
+  price: 5.49
+  salad: caesar
+
+large_caesar:
+  name: Large
+  price: 8.49
+  salad: caesar
+
+party_caesar:
+  name: Party
+  price: 15.99
+  salad: caesar

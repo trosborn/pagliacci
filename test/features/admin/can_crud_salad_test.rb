@@ -4,14 +4,20 @@ feature 'admin can CRUD salads' do
   before :each do
     sign_in :admin
   end
-  scenario 'admin wants to create a salad' do
+  scenario 'admin wants to create a salad', js: true do
     visit salads_path
 
     click_on 'Add New Salad'
     fill_in 'Name', with: 'Pagliaccio'
-    fill_in 'Small price', with: 4.99
-    fill_in 'Medium price', with: 7.99
-    fill_in 'Large price', with: 14.99
+    click_on 'Add Size'
+    find('.salad_sizes_name input').set('Small')
+    find('.salad_sizes_price input').set('5.49')
+    click_on 'Add Size'
+    within(all('.salad_sizes_name').last) { find('input').set('Large') }
+    within(all('.salad_sizes_price').last) { find('input').set('8.49') }
+    click_on 'Add Size'
+    within(all('.salad_sizes_name').last) { find('input').set('Party') }
+    within(all('.salad_sizes_price').last) { find(' input').set('15.99') }
     check 'salami'
     check 'garbanzo_beans'
     check 'kasseri'
@@ -21,9 +27,12 @@ feature 'admin can CRUD salads' do
     click_on 'Save'
 
     page.must_have_content 'Pagliaccio'
-    page.must_have_content '4.99'
-    page.must_have_content '7.99'
-    page.must_have_content '14.99'
+    page.must_have_content 'Small'
+    page.must_have_content '5.49'
+    page.must_have_content 'Large'
+    page.must_have_content '8.49'
+    page.must_have_content 'Party'
+    page.must_have_content '15.99'
     page.must_have_content 'salami'
     page.must_have_content 'garbanzo beans'
     page.must_have_content 'kasseri'
@@ -32,21 +41,34 @@ feature 'admin can CRUD salads' do
     page.must_have_content 'pagliaccio dressing'
     page.must_have_content 'Salad was successfully created.'
   end
-  scenario 'admin wants to edit a salad' do
+  scenario 'admin wants to edit a salad', js: true do
     test_salad = salads(:caesar)
     visit salad_path test_salad
 
     click_on edit
-    fill_in 'Name', with: 'Brutus'
-    fill_in 'Small price', with: 1.11
-    fill_in 'Medium price', with: 2.22
-    fill_in 'Large price', with: 3.33
+    fill_in 'Name', match: :first, with: 'Brutus'
+    within(all('.salad_sizes_name')[0]) { find('input').set('Parvus') }
+    within(all('.salad_sizes_price')[0]) { find('input').set('1.11') }
+    within(all('.salad_sizes_name')[1]) { find('input').set('Amplus') }
+    within(all('.salad_sizes_price')[1]) { find('input').set('2.22') }
+    within(all('.salad_sizes_name')[2]) { find('input').set('Festum') }
+    within(all('.salad_sizes_price')[2]) { find('input').set('33.33') }
     click_on 'Save'
 
+    page.wont_have_content 'Caesar'
+    page.wont_have_content 'Small'
+    page.wont_have_content '5.49'
+    page.wont_have_content 'Large'
+    page.wont_have_content '8.49'
+    page.wont_have_content 'Party'
+    page.wont_have_content '15.99'
     page.must_have_content 'Brutus'
+    page.must_have_content 'Parvus'
     page.must_have_content '1.11'
+    page.must_have_content 'Amplus'
     page.must_have_content '2.22'
-    page.must_have_content '3.33'
+    page.must_have_content 'Festum'
+    page.must_have_content '33.33'
     page.must_have_content 'Salad was successfully updated.'
   end
   scenario 'admin wants to delete a salad' do
