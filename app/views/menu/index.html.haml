@@ -86,11 +86,10 @@
       %br
       = salad.description
       %br
-      = salad.small_price
-      •
-      = salad.medium_price
-      •
-      = salad.large_price
+      = salad.sizes.each do |s|
+        s.name
+        s.price
+        •
 .row
   .large-4.columns#gelatos
     .menu-section
@@ -107,5 +106,3 @@
         BEVERAGES
     %p
       = add_commas_to_product @beverages
-
-

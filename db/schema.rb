@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151019084003) do
+ActiveRecord::Schema.define(version: 20151107113606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20151019084003) do
     t.datetime "updated_at",                  null: false
     t.boolean  "seasonal"
     t.boolean  "active"
-    t.integer  "other_size"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -87,12 +86,18 @@ ActiveRecord::Schema.define(version: 20151019084003) do
 
   create_table "salads", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.decimal  "small_price",  precision: 4, scale: 2
-    t.decimal  "medium_price", precision: 4, scale: 2
-    t.decimal  "large_price",  precision: 4, scale: 2
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "description"
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.string   "name"
+    t.float    "price"
+    t.integer  "relative_size"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "salad_id"
   end
 
   create_table "toppings", force: :cascade do |t|

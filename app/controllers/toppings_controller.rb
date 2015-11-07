@@ -8,18 +8,19 @@ class ToppingsController < ApplicationController
 
   def new
     @topping = Topping.new
-    authorize @topping, :new?
+    authorize @topping
   end
 
   def show
   end
 
   def edit
-    authorize @topping, :edit?
+    authorize @topping
   end
 
   def create
     @topping = Topping.new(topping_params)
+    authorize @topping
     respond_to do |format|
       if @topping.save
         format.html { redirect_to @topping, notice: 'Topping was successfully created.' }
@@ -27,10 +28,10 @@ class ToppingsController < ApplicationController
         format.html { render action: 'new' }
       end
     end
-    authorize @topping, :create?
   end
 
   def update
+    authorize @topping
     respond_to do |format|
       if @topping.update(topping_params)
         format.html { redirect_to @topping, notice: 'Topping was successfully updated.' }
@@ -38,15 +39,14 @@ class ToppingsController < ApplicationController
         format.html { render action: 'edit' }
       end
     end
-    authorize @topping, :update?
   end
 
   def destroy
+    authorize @topping
     @topping.destroy
     respond_to do |format|
       format.html { redirect_to toppings_url, notice: 'Topping was successfully destroyed.' }
     end
-    authorize @topping, :destroy?
   end
 
   private

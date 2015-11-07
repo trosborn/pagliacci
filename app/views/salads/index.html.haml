@@ -8,10 +8,9 @@
     %br
     = s.description
     %br
-    = s.small_price
-    •
-    = s.medium_price
-    •
-    = s.large_price
-    - if policy(@salads).update?
-      = link_to 'Edit', edit_salad_path(s)
+      - unless s.sizes.nil?
+        - s.sizes.each do |size|
+          = size.name
+          = size.price
+      - if policy(@salads).update?
+        = link_to 'Edit', edit_salad_path(s)

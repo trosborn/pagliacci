@@ -2,13 +2,18 @@ if ENV['TRAVIS']
   require 'coveralls'
   Coveralls.wear!('rails')
 end
+
 Rails.env = 'test'
+
 require File.expand_path('../../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/rails'
 require 'minitest/rails/capybara'
 require 'minitest/pride'
 require 'minitest/autorun'
+require 'capybara/poltergeist'
+
+Capybara.javascript_driver = :poltergeist
 
 class ActiveSupport::TestCase
   fixtures :all

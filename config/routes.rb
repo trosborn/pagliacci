@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :locations
   resources :menu_pizzas
   resources :toppings
-  resources :salads
+  resources :salads do
+    resources :sizes
+  end
   resources :gelatos
 
   devise_for :users

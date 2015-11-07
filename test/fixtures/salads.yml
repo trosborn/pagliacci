@@ -1,7 +1,7 @@
 caesar:
-  name: caesar
-  small_price: 8.99
-  medium_price: 9.99
-  large_price: 10.99
+  name: Caesar
+
+sicilian_chicken:
+  name: Sicilian chicken
   id: 1
 
