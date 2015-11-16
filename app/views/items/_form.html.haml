@@ -1,0 +1,19 @@
+= simple_form_for @item do |f|
+  = f.input :name
+  = f.input :description
+  = f.input :kind, label: 'Item Type', collection: ['Pizza', 'Gelato', 'Salad']
+  %h3 Sizes
+  #sizes
+    = f.simple_fields_for :sizes do |size|
+      = render 'size_fields', f: size
+    .links
+      = link_to_add_association 'Add Size', f, :sizes
+  %ul
+    - @toppings.each do |t|
+      %li
+        = check_box_tag "#{t.name}", t.id, @item.toppings.include?(t), :name => 'item[topping_ids][]'
+        %label
+          = t.name
+  = submit_tag 'Save'
+  - if @item.persisted?
+    = link_to 'Delete', item_path(@item), method: :delete

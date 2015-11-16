@@ -1,0 +1,34 @@
+caesar:
+  name: caesar
+  kind: Salad
+
+the_original:
+  name: The Original
+  id: 1
+  kind: Pizza
+
+coke:
+  name: coke
+  kind: Beverage
+  active: true
+
+veggie_fresh:
+  name: Veggie Fresh
+  kind: Pizza
+  active: true
+
+panna:
+  name: panna
+  kind: Gelato
+
+chantrelle:
+  name: CHANTERELLE AND PROSCIUTTO
+  kind: Pizza
+  seasonal: true
+  active: true
+
+hipster_primo:
+  name: HIPSTER HISPTER_PRIMO
+  kind: Pizza
+  seasonal: true
+  active: false

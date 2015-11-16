@@ -1,7 +1,7 @@
-class MenuPizzaPolicy < ApplicationPolicy
+class ItemPolicy < ApplicationPolicy
   attr_reader :user
 
-  def initialize user, menu_pizza
+  def initialize user, item
     @user = user || NullUser.new
   end
 

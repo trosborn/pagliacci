@@ -1,7 +1,7 @@
 lake_city_way:
-  name: 'Lake City Way'
-  nickname: 'LCW'
+  name: Lake City Way
+  nickname: LCW
 
 stone_way:
-  name: 'stone'
+  name: stone
   id: 1

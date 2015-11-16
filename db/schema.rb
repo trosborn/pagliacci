@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107113606) do
+ActiveRecord::Schema.define(version: 20151113081409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,23 +27,21 @@ ActiveRecord::Schema.define(version: 20151107113606) do
     t.integer  "location_id"
   end
 
-  create_table "beverages", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.decimal  "single_price"
-    t.decimal  "six_price"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table "item_toppings", force: :cascade do |t|
+    t.integer  "item_id"
+    t.integer  "topping_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "gelatos", force: :cascade do |t|
+  create_table "items", force: :cascade do |t|
     t.string   "name"
-    t.string   "description"
-    t.boolean  "dairy",       default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.boolean  "seasonal"
-    t.boolean  "active"
+    t.string   "description"
+    t.boolean  "seasonal",    default: false
+    t.boolean  "active",      default: false
+    t.string   "kind"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -55,49 +53,13 @@ ActiveRecord::Schema.define(version: 20151107113606) do
     t.datetime "updated_at",       null: false
   end
 
-  create_table "menu_pizzas", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
-    t.decimal  "small_price",  precision: 4, scale: 2
-    t.decimal  "medium_price", precision: 4, scale: 2
-    t.decimal  "large_price",  precision: 4, scale: 2
-    t.boolean  "seasonal",                             default: false
-    t.boolean  "active",                               default: false
-  end
-
-  create_table "pizza_toppings", force: :cascade do |t|
-    t.integer  "menu_pizza_id"
-    t.integer  "topping_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "pizza_toppings", ["menu_pizza_id"], name: "index_pizza_toppings_on_menu_pizza_id", using: :btree
-  add_index "pizza_toppings", ["topping_id"], name: "index_pizza_toppings_on_topping_id", using: :btree
-
-  create_table "salad_toppings", force: :cascade do |t|
-    t.integer  "salad_id"
-    t.integer  "topping_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "salads", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "description"
-  end
-
   create_table "sizes", force: :cascade do |t|
     t.string   "name"
     t.float    "price"
     t.integer  "relative_size"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "salad_id"
+    t.integer  "item_id"
   end
 
   create_table "toppings", force: :cascade do |t|

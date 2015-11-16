@@ -1,0 +1,12 @@
+= @item.name
+= @item.description
+= @item.kind
+- unless @item.sizes.nil?
+  - @item.sizes.each do |s|
+    = s.name
+    = s.price
+- @item.toppings.each do |t|
+  = t.name
+- if policy(@item).update?
+  = link_to 'Edit', edit_item_path(@item)
+  = link_to 'Delete', item_path(@item), method: :delete
