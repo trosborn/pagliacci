@@ -1,0 +1,16 @@
+- if policy(@items).create?
+  = link_to 'Add New Item', new_item_path
+%br
+- @items.each do |s|
+  .large-4.columns
+    %b
+      = s.name
+    %br
+    = s.description
+    %br
+      - unless s.sizes.nil?
+        - s.sizes.each do |size|
+          = size.name
+          = size.price
+      - if policy(@items).update?
+        = link_to 'Edit', edit_item_path(s)

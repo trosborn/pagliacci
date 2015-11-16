@@ -1,7 +1,7 @@
 lcw:
-  line1: 'yolo'
+  line1: yolo
   location: lake_city_way
 
 sw:
-  line1: 'Near Gary Larson'
+  line1: Near Gary Larson
   location: stone_way

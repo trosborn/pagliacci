@@ -8,8 +8,6 @@ gem 'pundit'
 
 gem 'rails', '4.2.0'
 
-gem 'poltergeist'
-
 gem 'pg'
 
 gem 'cocoon'
@@ -43,6 +41,7 @@ gem 'stackprof', '~> 0.2.7'
 gem 'coveralls', require: false
 
 group :development, :test do
+  gem 'pry-byebug'
   gem 'byebug'
   gem 'spring'
 end
@@ -52,6 +51,7 @@ gem 'minitest-rails'
 group :test do
   gem 'launchy'
   gem 'minitest-rails-capybara'
+  gem 'poltergeist'
 end
 
 gem 'rack-mini-profiler'

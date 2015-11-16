@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :locations
   resources :menu_pizzas
   resources :toppings
-  resources :salads do
+  resources :items do
     resources :sizes
   end
   resources :gelatos

@@ -20,18 +20,17 @@
   .large-4.columns#seasonal-pizzas
     %h2.menu-section
       SEASONAL PIZZAS
-    - @seasonal_pizzas.each do |seasonal_pizzas|
+    - @seasonal_pizzas.each do |seasonal_pizza|
       %p
         %b
-          = seasonal_pizzas.name.upcase
+          = seasonal_pizza.name.upcase
         %br
-        = seasonal_pizzas.description
+        = seasonal_pizza.description
         %br
-        = seasonal_pizzas.small_price
-        •
-        = seasonal_pizzas.medium_price
-        •
-        = seasonal_pizzas.large_price
+        - seasonal_pizza.sizes.each do |size|
+          = size.name
+          = size.price
+          •
   .large-8.columns#toppings
     %h2.menu-section
       CREATE YOUR OWN
@@ -68,11 +67,10 @@
       %br
       = menu_pizzas.description
       %br
-      = menu_pizzas.small_price
-      •
-      = menu_pizzas.medium_price
-      •
-      = menu_pizzas.large_price
+      - menu_pizzas.sizes.each do |size|
+        = size.name
+        = size.price
+        •
 .row
   .large-12.columns#salads
     .menu-section
@@ -86,9 +84,9 @@
       %br
       = salad.description
       %br
-      = salad.sizes.each do |s|
-        s.name
-        s.price
+      = salad.sizes.each do |size|
+        = size.name
+        = size.price
         •
 .row
   .large-4.columns#gelatos

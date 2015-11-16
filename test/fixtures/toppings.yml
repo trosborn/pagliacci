@@ -1,57 +1,55 @@
-pepperoni:
-  name: 'pepperoni'
-  active: true
-  seasonal: false
-  meat: true
+sausage:
+  name: sausage
   id: 1
 
-cheese_burger:
-  name: 'cheese burger'
-  active: true
-  meat: true
-  seasonal: true
-
-crack_burger:
-  name: 'crack burger'
-  meat: true
-  active: false
-  seasonal: true
-
-sausage:
-  name: 'sausage'
-
 onion:
-  name: 'onion'
+  name: onion
 
 green_pepper:
-  name: 'green pepper'
+  name: green pepper
 
 black_olives:
-  name: 'black olives'
+  name: black olives
 
 mozzarella:
-  name: 'mozzarella'
+  name: mozzarella
 
 red_sauce:
-  name: 'red sauce'
+  name: red sauce
 
 mushroom:
-  name: 'mushroom'
+  name: mushroom
 
 salami:
-  name: 'salami'
+  name: salami
 
 garbanzo_beans:
-  name: 'garbanzo beans'
+  name: garbanzo beans
 
 red_onions:
-  name: 'red onions'
+  name: red onions
 
 kasseri:
-  name: 'kasseri'
+  name: kasseri
+
+chanterelle:
+  name: chanterelle mushrooms
+  veggie: true
+  active: true
 
 red_peppers:
-  name: 'red peppers'
+  name: red peppers
+  veggie: true
 
 pagliaccio_dressing:
-  name: 'pagliaccio dressing'
+  name: pagliaccio dressing
+
+pepperoni:
+  name: pepperoni
+  meat: true
+  active: true
+
+beets:
+  name: beets
+  veggie: true
+  active: false

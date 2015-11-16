@@ -1,3 +1,3 @@
 class Size < ActiveRecord::Base
-  belongs_to :salad
+  belongs_to :item
 end
