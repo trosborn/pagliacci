@@ -32,3 +32,63 @@ hipster_primo:
   kind: Pizza
   seasonal: true
   active: false
+
+pepponi:
+  name: pepperoni
+  kind: Topping
+
+sausage:
+  name: sausage
+  kind: Topping
+
+onion:
+  name: onion
+  kind: Topping
+
+green_pepper:
+  name: green pepper
+  kind: Topping
+
+black_olives:
+  name: black olives
+  kind: Topping
+
+mozzarella:
+  name: mozzarella
+  kind: Topping
+
+red_sauce:
+  name: red sauce
+  kind: Topping
+
+mushroom:
+  name: mushroom
+  kind: Topping
+
+salami:
+  name: salami
+  kind: Topping
+
+garbanzo_beans:
+  name: garbanzo beans
+  kind: Topping
+
+red_onions:
+  name: red onions
+  kind: Topping
+
+kasseri:
+  name: kasseri
+  kind: Topping
+
+chanterelle:
+  name: chanterelle mushrooms
+  active: true
+
+red_peppers:
+  name: red peppers
+  kind: Topping
+
+pagliaccio_dressing:
+  name: pagliaccio dressing
+  kind: Topping

@@ -1,9 +1,7 @@
 require 'helpers/test_helper'
 
 feature 'admin can CRUD items' do
-  before :each do
-    sign_in :admin
-  end
+  before(:each) { sign_in :admin }
   scenario 'admin wants to create an item', js: true do
     visit items_path
 
@@ -53,6 +51,7 @@ feature 'admin can CRUD items' do
 
     click_on edit
     fill_in 'Name', match: :first, with: 'Brutus'
+    select 'Pizza', from: 'Item Type'
     within(all('.item_sizes_name')[0]) { find('input').set('Parvus') }
     within(all('.item_sizes_price')[0]) { find('input').set('1.11') }
     within(all('.item_sizes_name')[1]) { find('input').set('Amplus') }
@@ -68,6 +67,8 @@ feature 'admin can CRUD items' do
     page.wont_have_content '8.49'
     page.wont_have_content 'Party'
     page.wont_have_content '15.99'
+    page.wont_have_content 'Salad'
+    page.must_have_content 'Pizza'
     page.must_have_content 'Brutus'
     page.must_have_content 'Parvus'
     page.must_have_content '1.11'

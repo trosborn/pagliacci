@@ -1,6 +1,6 @@
 require 'helpers/test_helper'
 
-['item', 'location', 'topping'].each do |item|
+['item', 'location'].each do |item|
   feature 'non-admin policies' do
     scenario "I cannot visit the new #{item.humanize} page" do
       visit "/#{item.pluralize}/new"
