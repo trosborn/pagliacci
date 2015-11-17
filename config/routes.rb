@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   resources :addresses
   resources :locations
-  resources :menu_pizzas
-  resources :toppings
   resources :items do
     resources :sizes
   end

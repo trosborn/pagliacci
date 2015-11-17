@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113081409) do
+ActiveRecord::Schema.define(version: 20151116231655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,10 @@ ActiveRecord::Schema.define(version: 20151113081409) do
     t.boolean  "seasonal",    default: false
     t.boolean  "active",      default: false
     t.string   "kind"
+    t.integer  "toppings_id"
   end
+
+  add_index "items", ["toppings_id"], name: "index_items_on_toppings_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
@@ -60,17 +63,6 @@ ActiveRecord::Schema.define(version: 20151113081409) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "item_id"
-  end
-
-  create_table "toppings", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "meat"
-    t.boolean  "veggie"
-    t.boolean  "cheese"
-    t.boolean  "seasonal",   default: false
-    t.boolean  "active",     default: false
   end
 
   create_table "users", force: :cascade do |t|

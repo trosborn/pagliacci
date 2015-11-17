@@ -1,7 +1,7 @@
 = simple_form_for @item do |f|
   = f.input :name
   = f.input :description
-  = f.input :kind, label: 'Item Type', collection: ['Pizza', 'Gelato', 'Salad']
+  = f.input :kind, label: 'Item Type', collection: ['Pizza', 'Gelato', 'Salad', 'Beverage', 'Topping']
   %h3 Sizes
   #sizes
     = f.simple_fields_for :sizes do |size|
