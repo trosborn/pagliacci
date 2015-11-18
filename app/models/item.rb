@@ -13,4 +13,8 @@ class Item < ActiveRecord::Base
   def self.find_seasonal_by_kind query
     Item.where "kind = '#{query}' AND seasonal IS true AND active IS true"
   end
+
+  def self.toppings
+    Item.where("kind = 'Topping'")
+  end
 end

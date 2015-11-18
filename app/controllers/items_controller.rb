@@ -53,7 +53,7 @@ class ItemsController < ApplicationController
 
 private
   def set_toppings
-    @toppings = Item.where("kind = 'Topping'")
+    @toppings = Item.toppings
   end
 
   def set_item
