@@ -10,6 +10,7 @@ feature 'admin can CRUD items' do
     fill_in 'Description', with: 'Green leaf lettuce tossed with garbanzo beans,
         diced red peppers, kasseri cheese, salami, red onions and our Dijon vinaigrette.'
     select 'Salad', from: 'Item Type'
+    select 'Meat', from: 'Qualifier'
     click_on 'Add Size'
     find('.item_sizes_name input').set('Small')
     find('.item_sizes_price input').set('5.49')
@@ -31,6 +32,7 @@ feature 'admin can CRUD items' do
     page.must_have_content 'Green leaf lettuce tossed with garbanzo beans,
     diced red peppers, kasseri cheese, salami, red onions and our Dijon vinaigrette.'
     page.must_have_content 'Salad'
+    page.must_have_content 'Meat'
     page.must_have_content 'Small'
     page.must_have_content '5.49'
     page.must_have_content 'Large'

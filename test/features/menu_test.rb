@@ -15,7 +15,9 @@ feature 'visitor can view menu items' do
     page.must_have_content 'CAESAR'
   end
   scenario 'I want to see the standard toppings' do
-    page.must_have_content 'pepperoni'
+    within(:xpath, '//div[@id="meat"]') { page.must_have_content 'pepperoni' }
+    within(:xpath, '//div[@id="veggie"]') { page.must_have_content 'green pepper' }
+    within(:xpath, '//div[@id="cheese"]') { page.must_have_content 'mozzarella' }
   end
   scenario 'I want to see the /active/ seasonal toppings' do
     page.must_have_content 'chanterelle mushrooms'

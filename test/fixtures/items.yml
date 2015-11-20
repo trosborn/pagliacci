@@ -1,6 +1,7 @@
 caesar:
   name: caesar
   kind: Salad
+  active: true
 
 the_original:
   name: The Original
@@ -20,6 +21,7 @@ veggie_fresh:
 panna:
   name: panna
   kind: Gelato
+  active: true
 
 chantrelle:
   name: CHANTERELLE AND PROSCIUTTO
@@ -36,6 +38,8 @@ hipster_primo:
 pepponi:
   name: pepperoni
   kind: Topping
+  qualifier: Meat
+  active: true
 
 sausage:
   name: sausage
@@ -48,6 +52,8 @@ onion:
 green_pepper:
   name: green pepper
   kind: Topping
+  qualifier: Veggie
+  active: true
 
 black_olives:
   name: black olives
@@ -56,6 +62,8 @@ black_olives:
 mozzarella:
   name: mozzarella
   kind: Topping
+  qualifier: Cheese
+  active: true
 
 red_sauce:
   name: red sauce
@@ -84,6 +92,14 @@ kasseri:
 chanterelle:
   name: chanterelle mushrooms
   active: true
+  kind: Topping
+  qualifier: Veggie
+
+beets:
+  name: beets
+  active: false
+  kind: Topping
+  qualifier: Veggie
 
 red_peppers:
   name: red peppers

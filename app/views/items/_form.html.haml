@@ -2,6 +2,7 @@
   = f.input :name
   = f.input :description
   = f.input :kind, label: 'Item Type', collection: ['Pizza', 'Gelato', 'Salad', 'Beverage', 'Topping']
+  = f.input :qualifier, label: 'Topping Qualifier', collection: ['Meat', 'Veggie', 'Cheese']
   %h3 Sizes
   #sizes
     = f.simple_fields_for :sizes do |size|
