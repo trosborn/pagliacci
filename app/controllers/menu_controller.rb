@@ -5,8 +5,8 @@ class MenuController < ApplicationController
     @gelatos = Item.find_by_kind 'Gelato'
     @salads = Item.find_by_kind 'Salad'
     @beverages = Item.find_by_kind 'Beverage'
-    @veggie_toppings = Item.where("kind = 'Topping'")
-    @cheese_toppings = Item.where("kind = 'Topping'")
-    @meat_toppings = Item.where('active IS true')
+    @veggie_toppings = Item.toppings.where qualifier: 'Veggie', active: true
+    @cheese_toppings = Item.toppings.where qualifier: 'Cheese', active: true
+    @meat_toppings = Item.toppings.where qualifier: 'Meat', active: true
   end
 end
