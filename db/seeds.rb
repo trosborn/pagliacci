@@ -62,7 +62,7 @@ Item.create(name: 'Pagliaccio',
     kind: 'Salad')
 
 Item.create(name: 'Caesar',
-  description: "Romaine lettuce tossed with Parmesan, croutons handmade by Macrina Bakery and our Caesar dressing.",
+  description: "Romaine lettuce tossed with Parmesan, croutons handmade by Macrina Bakery, and our Caesar dressing.",
   "sizes_attributes"=>{"1447877840568"=>{"name"=>"Small", "price"=>"18.99",
     "_destroy"=>"false"}, "1447877847782"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"}, "1447877840879"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
     active: true,

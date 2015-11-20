@@ -4,6 +4,6 @@ module MenuHelper
   end
 
   def add_bullets_to_sizes sizes
-    sizes.pluck(:price).join '•'
+    sizes.pluck(:price).join ' • '
   end
 end
