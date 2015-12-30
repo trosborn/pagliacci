@@ -3,8 +3,13 @@
   margin-right: auto;
   margin-left: auto;
   display: block;
-  position: relative;
+}
+
+#logo-wrapper {
+  height: 200px;
+  width: 163px;
   top: -40px;
+  position: relative;
 }
 
 #logo-wrapper {
@@ -14,4 +19,7 @@
 
 #phone-numbers a {
   color: white;
+  font-size: 140%;
+  font-weight: 600;
+  text-shadow: 0 0 20px #000;
 }
