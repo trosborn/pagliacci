@@ -3,6 +3,10 @@
   margin-right: auto;
   margin-left: auto;
   display: block;
+  transition: all .1s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 #logo-wrapper {
