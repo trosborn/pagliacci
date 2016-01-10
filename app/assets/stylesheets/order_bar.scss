@@ -1,14 +1,11 @@
 .button {
   background-color: $pag-red;
   width: 220px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
   &:hover {
     background-color: $pag-dark-red;
-  }
-}
-
-@media only screen and (max-width: 40em) {
-  .button {
-    max-width: 180px;
   }
 }
 
