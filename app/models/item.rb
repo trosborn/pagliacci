@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+  belongs_to :order
   has_many :sizes
   has_many :item_toppings
   has_many :toppings, through: :item_toppings
@@ -16,5 +17,9 @@ class Item < ActiveRecord::Base
 
   def self.toppings
     where kind: 'Topping'
+  end
+
+  def size_selection= val
+    sizes.build(name: Size.find_by_id(val).name)
   end
 end

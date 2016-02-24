@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
-  resources :beverages
-
   root 'welcome#index'
 
   get 'menu', to: 'menu#index'
+  get 'order', to: 'orders#home'
+  get 'add_item', to: 'orders#add_item'
 
-  resources :addresses
-  resources :locations
+  resources :orders, :addresses, :locations, :beverages, :gelatos
   resources :items do
     resources :sizes
   end
-  resources :gelatos
 
   devise_for :users
 end

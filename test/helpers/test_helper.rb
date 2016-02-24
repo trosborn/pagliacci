@@ -13,11 +13,12 @@ require 'minitest/pride'
 require 'minitest/autorun'
 require 'capybara/poltergeist'
 
-Capybara.javascript_driver = :poltergeist
-
 class ActiveSupport::TestCase
+  self.use_transactional_fixtures = false
   fixtures :all
 end
+
+Capybara.javascript_driver = :poltergeist
 
 def sign_in role
   visit new_user_session_path

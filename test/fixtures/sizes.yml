@@ -12,3 +12,18 @@ party_caesar:
   name: Party
   price: 15.99
   item: caesar
+
+small_pizza:
+  name: Small
+  price: 11.99
+  item: x_pepperoni
+
+medium_pizza:
+  name: Medium
+  price: 16.99
+  item: x_pepperoni
+
+large_pizza:
+  name: Large
+  price: 18.99
+  item: x_pepperoni
