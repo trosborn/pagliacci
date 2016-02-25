@@ -47,6 +47,21 @@ feature 'admin can CRUD items' do
     page.must_have_content 'pagliaccio dressing'
     page.must_have_content 'Item was successfully created.'
   end
+  scenario 'admin wants to add a half size for a pizza', js: true do
+    test_item = items(:the_original)
+    visit edit_item_path test_item
+
+    click_on 'Add Size'
+    find('.item_sizes_name input').set('Small')
+    find('.item_sizes_price input').set('11.99')
+    find('.item_sizes_half_price input').set('5.99')
+    click_on 'Save'
+
+    page.must_have_content 'Small'
+    page.must_have_content '11.99'
+    page.must_have_content '5.99'
+    page.must_have_content 'Item was successfully updated'
+  end
   scenario 'admin wants to edit a item', js: true do
     test_item = items(:caesar)
     visit item_path test_item

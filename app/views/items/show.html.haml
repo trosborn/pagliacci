@@ -6,6 +6,7 @@
   - @item.sizes.each do |s|
     = s.name
     = s.price
+    = s.half_price
 - @item.toppings.each do |t|
   = t.name
 - if policy(@item).update?
