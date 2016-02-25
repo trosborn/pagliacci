@@ -7,6 +7,12 @@ the_original:
   name: The Original
   id: 1
   kind: Pizza
+  active: true
+
+x_pepperoni:
+  name: Extra Pepperoni
+  kind: Pizza
+  active: true
 
 coke:
   name: coke

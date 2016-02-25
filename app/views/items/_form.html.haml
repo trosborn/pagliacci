@@ -12,7 +12,7 @@
   %ul
     - @toppings.each do |t|
       %li
-        = check_box_tag "#{t.name}", t.id, @item.toppings.include?(t), :name => 'item[topping_ids][]'
+        = check_box_tag "#{t.name}", t.id, @item.toppings.include?(t), name: 'item[topping_ids][]'
         %label
           = t.name
   = submit_tag 'Save'
