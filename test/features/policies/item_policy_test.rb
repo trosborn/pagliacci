@@ -2,7 +2,7 @@ require 'helpers/test_helper'
 
 ['item', 'location'].each do |item|
   feature 'non-admin policies' do
-    scenario "I cannot visit the new #{item.humanize} page" do
+    scenario "non-admins cannot visit the new #{item.humanize} page" do
       visit "/#{item.pluralize}/new"
 
       page.current_path.must_equal '/'

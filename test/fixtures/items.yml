@@ -14,6 +14,14 @@ x_pepperoni:
   kind: Pizza
   active: true
 
+x_pepperoni_topping:
+  name: Extra Pepperoni
+  kind: Topping
+  active: true
+
+x_pepperoni_side_1:
+  whole_pie: x_pepperoni
+
 coke:
   name: coke
   kind: Beverage
