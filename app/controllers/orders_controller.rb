@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
   end
 
   def add_item
+    @whole_pie = @item
     @toppings = Item.toppings
     @order = current_user.orders.find_or_create_by completed: false
   end

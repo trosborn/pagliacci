@@ -23,7 +23,9 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     authorize @item
     respond_to do |format|
-      if @item.save
+      if @item.save && params[:item][:size_selection] != nil
+        format.html { redirect_to '/order', notice: "#{view_context.add_item_to_order @item}" }
+      elsif @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
       else
         format.html { render action: 'new' }
@@ -63,6 +65,6 @@ private
   def item_params
     params.require(:item).permit(:name, :description, :kind, :qualifier, :size_selection, :order_id,
       sizes_attributes: [:name, :price, :half_price, :id, :_destroy],
-      topping_ids: [])
+      sides_attributes: [{side1: {topping_ids: []}}, {side2: {topping_ids: []}}])
   end
 end
