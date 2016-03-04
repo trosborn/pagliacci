@@ -1,0 +1,20 @@
+%ul#side1.large-6.columns
+  - @toppings.each do |t|
+    %li
+      = check_box_tag "#{t.name}", t.id, @item.sides[0].toppings.include?(t), name: 'item[sides_attributes]side1[topping_ids][]'
+      %label
+        = t.name
+%ul#side2.large-6.columns
+  - if @item.sides[1].try(:toppings) != nil
+    - @toppings.each do |t|
+      %li
+        = check_box_tag "#{t.name}", t.id, @item.sides[1].toppings.include?(t), name: 'item[sides_attributes]side2[topping_ids][]'
+        %label
+          = t.name
+  - else
+    - @toppings.each do |t|
+      %li
+        = check_box_tag "#{t.name}", t.id, checked = false, name: 'item[sides_attributes]side2[topping_ids][]'
+        %label
+          = t.name
+

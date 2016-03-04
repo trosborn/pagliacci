@@ -1,11 +1,14 @@
 class Item < ActiveRecord::Base
   belongs_to :order
+  belongs_to :whole_pie, class_name: 'Item', foreign_key: 'whole_pie_id'
   has_many :sizes
   has_many :item_toppings
+  has_many :sides, class_name: 'Item', foreign_key: 'whole_pie_id'
   has_many :toppings, through: :item_toppings
   has_many :inverse_item_toppings, class_name: 'ItemTopping', foreign_key: 'item_id'
   has_many :inverse_toppings, through: :inverse_item_toppings, source: :item
   accepts_nested_attributes_for :sizes, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :sides, reject_if: :all_blank, allow_destroy: true
 
   def self.find_by_kind query
     where kind: query, seasonal: false, active: true
@@ -20,6 +23,6 @@ class Item < ActiveRecord::Base
   end
 
   def size_selection= val
-    sizes.build(name: Size.find_by_id(val).name)
+    sizes.build name: Size.find_by_id(val).name
   end
 end

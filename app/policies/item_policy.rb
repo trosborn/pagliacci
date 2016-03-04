@@ -1,8 +1,9 @@
 class ItemPolicy < ApplicationPolicy
-  attr_reader :user
+  attr_reader :user, :item
 
   def initialize user, item
     @user = user || NullUser.new
+    @item = item
   end
 
   def create?
