@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+
+
+  namespace :admin do
+    resources :items
+  end
 end

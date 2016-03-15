@@ -2,6 +2,10 @@
 = @item.description
 = @item.kind
 = @item.qualifier
+- if @item.active?
+  Active (On menu)
+- else
+  Inactive (Not on menu)
 - unless @item.sizes.nil?
   - @item.sizes.each do |s|
     = s.name
@@ -9,6 +13,5 @@
     = s.half_price
 - @item.toppings.each do |t|
   = t.name
-- if policy(@item).update?
-  = link_to 'Edit', edit_item_path(@item)
-  = link_to 'Delete', item_path(@item), method: :delete
+= link_to 'Edit', edit_admin_item_path(@item)
+= link_to 'Delete', admin_item_path(@item), method: :delete
