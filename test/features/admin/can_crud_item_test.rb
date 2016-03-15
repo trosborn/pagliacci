@@ -29,8 +29,6 @@ feature 'admin can CRUD items' do
     check 'Active'
     click_on 'Save'
 
-    save_and_open_page
-
     page.must_have_content 'Pagliaccio'
     page.must_have_content 'Green leaf lettuce tossed with garbanzo beans,
     diced red peppers, kasseri cheese, salami, red onions and our Dijon vinaigrette.'
