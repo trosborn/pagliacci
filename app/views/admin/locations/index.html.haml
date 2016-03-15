@@ -6,9 +6,8 @@
     = location.seating_capacity
     = link_to 'Show', location
     - if policy(@locations).update?
-      = link_to 'Edit', edit_location_path(location)
+      = link_to 'Edit', edit_admin_location_path(location)
       = link_to 'Destroy', location, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %br
 
-- if policy(@locations).update?
-  = link_to 'New Location', new_location_path
+= link_to 'New Location', new_admin_location_path

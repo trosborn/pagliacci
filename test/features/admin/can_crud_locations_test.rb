@@ -5,7 +5,7 @@ feature 'admin can CRUD locations' do
     sign_in :admin
   end
   scenario 'as an admin, I can create a location' do
-    visit locations_path
+    visit admin_locations_path
 
     click_on 'New Location'
     fill_in 'Name', with: 'Lake City Way'
@@ -30,7 +30,7 @@ feature 'admin can CRUD locations' do
   end
   scenario 'as an admin, I can edit a location' do
     test_location = locations(:lake_city_way)
-    visit location_path test_location
+    visit admin_location_path test_location
 
     click_on edit
     fill_in 'Name', with: 'Tahoma'
@@ -56,9 +56,9 @@ feature 'admin can CRUD locations' do
   end
   scenario 'as an admin, I can delete a location' do
     test_location = locations(:lake_city_way)
-    visit location_path test_location
+    visit admin_location_path test_location
 
-    click_on 'Delete'
+    click_on delete
 
     page.wont_have_content 'Lake City Way'
     page.wont_have_content 'LCW'
