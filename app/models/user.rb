@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  def customer?
+    if admin == false
+      true
+    end
+  end
 end
 class NullUser
   def admin?

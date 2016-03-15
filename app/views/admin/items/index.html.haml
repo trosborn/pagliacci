@@ -1,5 +1,4 @@
-- if policy(@items).create?
-  = link_to 'Add New Item', new_item_path
+= link_to 'Add New Item', new_admin_item_path
 %br
 - @items.each do |i|
   .large-4.columns
@@ -12,5 +11,4 @@
         - i.sizes.each do |size|
           = size.name
           = size.price
-      - if policy(@items).update?
-        = link_to 'Edit', edit_item_path(i)
+        = link_to 'Edit', edit_admin_item_path(i)

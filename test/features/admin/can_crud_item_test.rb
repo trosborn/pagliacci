@@ -3,7 +3,7 @@ require 'helpers/test_helper'
 feature 'admin can CRUD items' do
   before(:each) { sign_in :admin }
   scenario 'admin wants to create an item', js: true do
-    visit items_path
+    visit admin_items_path
 
     click_on 'Add New Item'
     fill_in 'Name', with: 'Pagliaccio'
@@ -26,7 +26,10 @@ feature 'admin can CRUD items' do
     check 'red_onions'
     check 'red_peppers'
     check 'pagliaccio_dressing'
+    check 'Active'
     click_on 'Save'
+
+    save_and_open_page
 
     page.must_have_content 'Pagliaccio'
     page.must_have_content 'Green leaf lettuce tossed with garbanzo beans,
@@ -45,11 +48,12 @@ feature 'admin can CRUD items' do
     page.must_have_content 'red onions'
     page.must_have_content 'red peppers'
     page.must_have_content 'pagliaccio dressing'
+    page.must_have_content 'Active'
     page.must_have_content 'Item was successfully created.'
   end
   scenario 'admin wants to add a half size for a pizza', js: true do
     test_item = items(:the_original)
-    visit edit_item_path test_item
+    visit edit_admin_item_path test_item
 
     click_on 'Add Size'
     find('.item_sizes_name input').set('Small')
@@ -64,7 +68,7 @@ feature 'admin can CRUD items' do
   end
   scenario 'admin wants to edit a item', js: true do
     test_item = items(:caesar)
-    visit item_path test_item
+    visit admin_item_path test_item
 
     click_on edit
     fill_in 'Name', match: :first, with: 'Brutus'
@@ -97,7 +101,7 @@ feature 'admin can CRUD items' do
   end
   scenario 'admin wants to delete a item' do
     test_item = items(:caesar)
-    visit item_path test_item
+    visit admin_item_path test_item
 
     click_on 'Delete'
 

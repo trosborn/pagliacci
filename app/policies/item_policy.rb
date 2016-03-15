@@ -6,19 +6,39 @@ class ItemPolicy < ApplicationPolicy
     @item = item
   end
 
-  def create?
+  def admin_create?
     user.admin?
+  end
+
+  def admin_new?
+    user.admin?
+  end
+
+  def admin_edit?
+    user.admin?
+  end
+
+  def admin_update?
+    user.admin?
+  end
+
+  def admin_destroy?
+    user.admin?
+  end
+
+  def create?
+    user.customer?
   end
 
   def new?
-    user.admin?
+    user.customer?
   end
 
   def update?
-    user.admin?
+    user.customer?
   end
 
   def destroy?
-    user.admin?
+    user.customer
   end
 end
