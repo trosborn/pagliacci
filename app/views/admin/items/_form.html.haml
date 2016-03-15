@@ -1,8 +1,10 @@
-= simple_form_for @item do |f|
+= simple_form_for [:admin, @item] do |f|
   = f.input :name
   = f.input :description
   = f.input :kind, label: 'Item Type', collection: ['Pizza', 'Gelato', 'Salad', 'Beverage', 'Topping']
   = f.input :qualifier, label: 'Topping Qualifier', collection: ['Meat', 'Veggie', 'Cheese']
+  = f.check_box :active
+  = f.label :active, 'Active'
   %h3 Sizes
   #sizes
     = f.simple_fields_for :sizes do |size|
@@ -17,4 +19,4 @@
           = t.name
   = submit_tag 'Save'
   - if @item.persisted?
-    = link_to 'Delete', item_path(@item), method: :delete
+    = link_to 'Delete', admin_item_path(@item), method: :delete
