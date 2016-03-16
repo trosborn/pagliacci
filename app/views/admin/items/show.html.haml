@@ -11,7 +11,8 @@
     = s.name
     = s.price
     = s.half_price
-- @item.toppings.each do |t|
-  = t.name
+- if @item.sides.first != nil
+  - @item.sides.first.toppings.each do |t|
+    = t.name
 = link_to 'Edit', edit_admin_item_path(@item)
 = link_to 'Delete', admin_item_path(@item), method: :delete
