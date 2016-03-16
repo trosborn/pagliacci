@@ -2,7 +2,8 @@
 = hidden_field :order, :id, name: 'item[order_id]'
 = hidden_field :item, :kind, name: 'item[kind]'
 = collection_select :item, :sizes, @item.sizes, :id, :name, {include_blank: 'Select Size', prompt: 'Select Size'}, name: 'item[size_selection]'
-#side_fields.large-12-columns
-  = render 'side_fields'
+- if @item.sides.size != 0
+  #side_fields.large-12-columns
+    = render 'side_fields'
 .large-12-columns
   = submit_tag 'Add to Order'

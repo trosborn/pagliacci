@@ -61,8 +61,8 @@ private
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :kind, :qualifier, :size_selection, :order_id, :active,
+    params.require(:item).permit(:name, :description, :kind, :qualifier, :size_selection, :order_id,
       sizes_attributes: [:name, :price, :half_price, :id, :_destroy],
-      topping_ids: [])
+      sides_attributes: [{side1: {topping_ids: []}}])
   end
 end
