@@ -6,11 +6,11 @@
       = image_tag 'extra-pepperoni-pizza.jpg'
 %h1 Salads
 %ul
-  - @salads.each do |p|
+  - @salads.each do |s|
     %li
-      = link_to "#{p.name}", "add_item?item_id=#{p.id}"
+      = link_to "#{s.name}", "add_item?item_id=#{s.id}"
 %h1 Gelatos
 %ul
-  - @gelatos.each do |p|
+  - @gelatos.each do |g|
     %li
-      = link_to "#{p.name}", "add_item?item_id=#{p.id}
+      = link_to "#{g.name}", "add_item?item_id=#{g.id}
