@@ -17,7 +17,7 @@ end
   Item.create(name: "#{t}", active: true, seasonal: false, qualifier: 'Meat', kind: 'Topping')
 end
 
-1.times do Item.create(name: 'The Original',
+Item.create(name: 'The Original',
   description: "Our signature cheese pizza made with whole-milk mozzarella and our seasoned tomato sauce on hand-tossed dough, baked on bricks.",
   sides_attributes: [{topping_ids: ['1', '2', '5']}],
   sizes_attributes:
@@ -26,7 +26,17 @@ end
   "1447877840479"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
   active: true,
   kind: 'Pizza')
-end
+
+Item.create(name: 'Sicilian Chicken',
+  description: "Mixed greens and arugula combined with chicken, thyme roasted artichokes, currants, sun-ripened tomatoes and kasseri cheese tossed in a spicy,
+  vinaigrette.",
+  sides_attributes: [{topping_ids: ['1', '8', '15']}],
+  sizes_attributes:
+  {"1447877840468"=>{"name"=>"Small", "price"=>"18.99", "_destroy"=>"false"},
+  "1447877847682"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"},
+  "1447877840479"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
+  active: true,
+  kind: 'Pizza')
 
 Item.create(name: 'Sicilian Chicken',
   description: "Mixed greens and arugula combined with chicken, thyme roasted artichokes, currants, sun-ripened tomatoes and kasseri cheese tossed in a spicy,
