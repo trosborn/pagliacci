@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+class Order::OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :set_item, only: [:add_item]
   after_action :verify_authorized, except: [:home, :add_item, :create]
