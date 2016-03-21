@@ -1,4 +1,4 @@
-= form_tag('/items')
+= form_tag order_items_path
 = hidden_field :order, :id, name: 'item[order_id]'
 = hidden_field :item, :kind, name: 'item[kind]'
 = collection_select :item, :sizes, @item.sizes, :id, :name, {include_blank: 'Select Size', prompt: 'Select Size'}, name: 'item[size_selection]'

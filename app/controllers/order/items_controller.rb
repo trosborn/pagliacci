@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class Order::ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :set_toppings, only: [:new, :create, :edit, :update]
   after_action :verify_authorized, except: [:index, :show]
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
     authorize @item
     respond_to do |format|
       if @item.save && params[:item][:size_selection] != nil
-        format.html { redirect_to '/order', notice: "#{view_context.add_item_to_order @item}" }
+        format.html { redirect_to order_home_path, notice: "#{view_context.add_item_to_order @item}" }
       elsif @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
       else
