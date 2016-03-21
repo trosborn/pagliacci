@@ -1,4 +1,4 @@
-class Order::ItemsController < ApplicationController
+class Order::ItemsController < Order::BaseController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :set_toppings, only: [:new, :create, :edit, :update]
   after_action :verify_authorized, except: [:index, :show]
