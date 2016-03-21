@@ -1,0 +1,19 @@
+#order-top-bar {
+  margin: 0px 20px 0px 20px;
+  #logo-subsection {
+    display: inline-block;
+  }
+  #phone-subsection {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 32px;
+      a {
+        display: block;
+      }
+    }
+  #login-subsection {
+    vertical-align: top;
+    display: inline-block;
+    float: right;
+  }
+}
