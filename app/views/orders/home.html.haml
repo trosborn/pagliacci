@@ -1,16 +1,24 @@
-%h1 Pizzas
-%ul#pizzas
-  - @menu_pizzas.each do |p|
-    %li.small-6.columns
-      = link_to "#{p.name}", "add_item?item_id=#{p.id}"
-      = image_tag 'extra-pepperoni-pizza.jpg'
-%h1 Salads
-%ul
-  - @salads.each do |s|
-    %li
-      = link_to "#{s.name}", "add_item?item_id=#{s.id}"
-%h1 Gelatos
-%ul
-  - @gelatos.each do |g|
-    %li
-      = link_to "#{g.name}", "add_item?item_id=#{g.id}
+#order-home
+  %h1.small-12.columns
+    PIZZAS
+    #pizzas
+      - @menu_pizzas.each do |p|
+        .small-6.columns
+          = link_to "add_item?item_id=#{p.id}" do
+            = "#{p.name.upcase}"
+            = image_tag 'extra-pepperoni-pizza.jpg'
+  %h1.small-12.columns
+    SALADS
+    #salads
+      - @salads.each do |s|
+        .small-6.columns
+          = link_to "add_item?item_id=#{s.id}" do
+            = "#{s.name.upcase}"
+            = image_tag 'caesar-salad.jpg'
+  %h1.small-12.columns
+    GELATOS
+    #gelatos
+      - @gelatos.each do |g|
+        .small-6.columns
+          = link_to "add_item?item_id=#{g.id}" do
+            = "#{g.name.upcase}"

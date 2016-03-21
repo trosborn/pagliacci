@@ -6,7 +6,7 @@ feature 'customer can create orders' do
     visit ''
 
     click_on 'ORDER ONLINE'
-    click_on 'Extra Pepperoni'
+    click_on 'EXTRA PEPPERONI'
     select 'Large', from: 'item_sizes'
     click_on 'Add to Order'
 
@@ -18,7 +18,7 @@ feature 'customer can create orders' do
     visit ''
 
     click_on 'ORDER ONLINE'
-    click_on 'Extra Pepperoni'
+    click_on 'EXTRA PEPPERONI'
     select 'Medium', from: 'item_sizes'
     within('#side2') {check 'green_pepper'}
     click_on 'Add to Order'
