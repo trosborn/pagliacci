@@ -1,2 +1,24 @@
-- @menu_pizzas.each do |p|
-    = link_to "#{p.name}", "add_item?item_id=#{p.id}"
+#order-home
+  %h1.small-12.columns
+    PIZZAS
+    #pizzas
+      - @menu_pizzas.each do |p|
+        .small-6.columns
+          = link_to "add_item?item_id=#{p.id}" do
+            = "#{p.name.upcase}"
+            = image_tag 'extra-pepperoni-pizza.jpg'
+  %h1.small-12.columns
+    SALADS
+    #salads
+      - @salads.each do |s|
+        .small-6.columns
+          = link_to "add_item?item_id=#{s.id}" do
+            = "#{s.name.upcase}"
+            = image_tag 'caesar-salad.jpg'
+  %h1.small-12.columns
+    GELATOS
+    #gelatos
+      - @gelatos.each do |g|
+        .small-6.columns
+          = link_to "add_item?item_id=#{g.id}" do
+            = "#{g.name.upcase}"

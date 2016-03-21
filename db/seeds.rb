@@ -17,30 +17,47 @@ end
   Item.create(name: "#{t}", active: true, seasonal: false, qualifier: 'Meat', kind: 'Topping')
 end
 
-1.times do Item.create(name: 'The Original',
+Item.create(name: 'The Original',
   description: "Our signature cheese pizza made with whole-milk mozzarella and our seasoned tomato sauce on hand-tossed dough, baked on bricks.",
   sides_attributes: [{topping_ids: ['1', '2', '5']}],
-  sizes_attributes:
-  {"1447877840468"=>{"name"=>"Small", "price"=>"18.99", "_destroy"=>"false"},
+  sizes_attributes: {"1447877840468"=>{"name"=>"Small", "price"=>"18.99", "_destroy"=>"false"},
   "1447877847682"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"},
   "1447877840479"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
   active: true,
   kind: 'Pizza')
-end
+
+Item.create(name: 'Brooklyn Bridge',
+  description: "Our signature cheese pizza made with whole-milk mozzarella and our seasoned tomato sauce on hand-tossed dough, baked on bricks.",
+  sides_attributes: [{topping_ids: ['1', '2', '5']}],
+  sizes_attributes: {"1447877840468"=>{"name"=>"Small", "price"=>"18.99", "_destroy"=>"false"},
+  "1447877847682"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"},
+  "1447877840479"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
+  active: true,
+  kind: 'Pizza')
+
+Item.create(name: 'Veggie Fresh',
+  description: "Our signature cheese pizza made with whole-milk mozzarella and our seasoned tomato sauce on hand-tossed dough, baked on bricks.",
+  sides_attributes: [{topping_ids: ['1', '2', '5']}],
+  sizes_attributes: {"1447877840468"=>{"name"=>"Small", "price"=>"18.99", "_destroy"=>"false"},
+  "1447877847122"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"},
+  "1447811840479"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
+  active: true,
+  kind: 'Pizza')
 
 Item.create(name: 'Sicilian Chicken',
   description: "Mixed greens and arugula combined with chicken, thyme roasted artichokes, currants, sun-ripened tomatoes and kasseri cheese tossed in a spicy,
   vinaigrette.",
-  sides_attributes: [{topping_ids: ['1', '2', '5']}],
-  "sizes_attributes"=>{"1447877840499"=>{"name"=>"Small", "price"=>"18.99",
-    "_destroy"=>"false"}, "144787784999"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"}, "1447877840974"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
-    active: true,
-    kind: 'Salad')
+  sides_attributes: [{topping_ids: ['1', '8', '15']}],
+  sizes_attributes: {"1447877840468"=>{"name"=>"Small", "price"=>"18.99", "_destroy"=>"false"},
+  "1447877847682"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"},
+  "1447277840479"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
+  active: true,
+  kind: 'Salad')
 
 Item.create(name: 'Pagliaccio',
   description: 'Green leaf lettuce tossed with garbanzo beans, diced red peppers, kasseri cheese, salami, red onions and our Dijon vinaigrette.',
   sides_attributes: [{topping_ids: ['1', '2', '5']}],
-  "sizes_attributes"=>{"1447877840429"=>{"name"=>"Small", "price"=>"18.99",
+  sizes_attributes: {"1447877840429"=>{"name"=>"Small", "price"=>"18.99",
     "_destroy"=>"false"}, "1447877847687"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"}, "1447877840379"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
     active: true,
     kind: 'Salad')
@@ -48,16 +65,16 @@ Item.create(name: 'Pagliaccio',
 Item.create(name: 'Caesar',
   description: "Romaine lettuce tossed with Parmesan, croutons handmade by Macrina Bakery, and our Caesar dressing.",
   sides_attributes: [{topping_ids: ['1', '2', '5']}],
-  "sizes_attributes"=>{"1447877840568"=>{"name"=>"Small", "price"=>"18.99",
-    "_destroy"=>"false"}, "1447877847782"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"}, "1447877840879"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
+  sizes_attributes: {"1447877840568"=>{"name"=>"Small", "price"=>"18.99",
+    _destroy: "false"}, "1447877847782"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"}, "1447877840879"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
     active: true,
     kind: 'Salad')
 
 Item.create(name: 'Pesto',
-  sides_attributes: [{topping_ids: ['1', '2', '5']}],
   description: "Pasta, sweet peas, and thyme-roasted artichoke hearts tossed with creamy pesto dressing.",
-  "sizes_attributes"=>{"1447877840445"=>{"name"=>"Small", "price"=>"18.99",
-    "_destroy"=>"false"}, "1447877847646"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"}, "1447877840447"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
+  sides_attributes: [{topping_ids: ['1', '2', '5']}],
+  sizes_attributes: {"1447877840445"=>{"name"=>"Small", "price"=>"18.99",
+    _destroy: "false"}, "1447877847646"=>{"name"=>"Medium", "price"=>"20.59", "_destroy"=>"false"}, "1447877840447"=>{"name"=>"Large", "price"=>"22.29","_destroy"=>"false"}},
     active: true,
     kind: 'Salad')
 

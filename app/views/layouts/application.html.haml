@@ -17,9 +17,8 @@
     = render 'layouts/order_bar'
     .row#paper
       = render 'layouts/navbar'
-      - if flash[:notice]
-        .notice
-          = notice
+      .notice
+        = notice
       .alert
         = alert
       .large-12.columns

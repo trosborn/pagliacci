@@ -1,0 +1,27 @@
+#order-home h1 {
+  text-align: center;
+  padding: 0px;
+  .small-6.columns {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    padding: 4px;
+    a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      color: white;
+      padding: 0px;
+      margin: 0px;
+      background-color: $pag-red;
+      -webkit-transition: background-color 0.3s ease-in-out;
+      -moz-transition: background-color 0.3s ease-in-out;
+      -ms-transition: background-color 0.3s ease-in-out;
+      -o-transition: background-color 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out;
+      &:hover {
+        background-color: $pag-dark-red;
+      }
+    }
+  }
+}
