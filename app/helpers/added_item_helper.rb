@@ -1,5 +1,5 @@
-module FlashNoticeHelper
-  def add_item_to_order item
+module AddedItemHelper
+  def added_item_to_order item
     side_1_topping_names = item.sides.first.toppings.pluck(:name).join(' ').downcase
     side_2 = item.sides.try(:second)
     if side_2 != nil

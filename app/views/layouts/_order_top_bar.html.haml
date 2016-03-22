@@ -1,17 +1,14 @@
 #order-top-bar
   #logo-subsection
     = image_tag 'pag-banner-logo-half-size.png'
-  #phone-subsection
-    = link_to '206.727.1717', 'tel:+12067261717'
   #login-subsection
     - if user_signed_in?
       = link_to 'Log out', destroy_user_session_path, method: :delete
     - else
-      = link_to 'Sign in or create an account', new_user_session_path
-  #numbers
-.notice
-  = notice
-.alert
-  = alert
+      = link_to 'Sign in or Sign up', new_user_session_path
+  .notice
+    = notice
+  .alert
+    = alert
 .large-12.columns
   = yield
