@@ -1,9 +1,9 @@
 class Item < ActiveRecord::Base
   belongs_to :order
   belongs_to :whole_pie, class_name: 'Item', foreign_key: 'whole_pie_id'
+  has_many :sides, class_name: 'Item', foreign_key: 'whole_pie_id'
   has_many :sizes
   has_many :item_toppings
-  has_many :sides, class_name: 'Item', foreign_key: 'whole_pie_id'
   has_many :toppings, through: :item_toppings
   has_many :inverse_item_toppings, class_name: 'ItemTopping', foreign_key: 'item_id'
   has_many :inverse_toppings, through: :inverse_item_toppings, source: :item
@@ -20,6 +20,10 @@ class Item < ActiveRecord::Base
 
   def self.toppings
     where kind: 'Topping'
+  end
+
+  def self.whole_pies
+    where whole_pie: nil, kind: 'Pizza'
   end
 
   def size_selection= val
