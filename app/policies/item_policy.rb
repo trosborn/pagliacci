@@ -41,4 +41,8 @@ class ItemPolicy < ApplicationPolicy
   def destroy?
     user.customer
   end
+
+  def added_item?
+    user.customer?
+  end
 end

@@ -1,0 +1,3 @@
+= form_tag 'review'
+= collection_select :order, :location_id, Location.all, :id, :name, prompt: true
+= submit_tag 'Review Order'

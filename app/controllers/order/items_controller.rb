@@ -23,10 +23,8 @@ class Order::ItemsController < Order::BaseController
     @item = Item.new(item_params)
     authorize @item
     respond_to do |format|
-      if @item.save && params[:item][:size_selection] != nil
-        format.html { redirect_to order_home_path, notice: "#{view_context.add_item_to_order @item}" }
-      elsif @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+      if @item.save
+        format.html { redirect_to order_added_item_path }
       else
         format.html { render action: 'new' }
       end

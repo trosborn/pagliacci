@@ -1,7 +1,7 @@
 class Order::OrdersController < Order::BaseController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :set_item, only: [:add_item]
-  after_action :verify_authorized, except: [:home, :add_item, :create]
+  after_action :verify_authorized, except: [:home]
 
   def home
     @menu_pizzas = Item.find_by_kind 'Pizza'
@@ -22,7 +22,15 @@ class Order::OrdersController < Order::BaseController
     @whole_pie = @item
     @toppings = Item.toppings
     @order = current_user.orders.find_or_create_by completed: false
+    authorize @order
   end
+
+  def added_item
+    @item = User.active_order.items.last
+    authorize @item
+  end
+
+  def
 
   def edit
   end

@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   get 'menu', to: 'menu#index'
 
   namespace :order do
+    get '', to: 'orders#home'
     get 'home', to: 'orders#home'
+    get 'checkout', to: 'cart#checkout'
     get 'add_item', to: 'orders#add_item'
+    get 'added_item', to: 'orders#added_item'
+    post 'review', to: 'cart#review'
     resources :items
   end
 
