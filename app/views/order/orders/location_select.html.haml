@@ -1,0 +1,4 @@
+= form_tag 'update_location'
+= hidden_field :order, :id, name: 'order[id]'
+= collection_select :order, :location_id, Location.all, :id, :name, prompt: true
+= submit_tag 'Submit'

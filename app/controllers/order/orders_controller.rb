@@ -1,7 +1,7 @@
 class Order::OrdersController < Order::BaseController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :set_item, only: [:add_item]
-  after_action :verify_authorized, except: [:home]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :location_select, :update_location]
+  before_action :set_item, only: [:add_item, :location]
+  after_action :verify_authorized, except: [:home, :location_select, :location_selected]
 
   def home
     @menu_pizzas = Item.find_by_kind 'Pizza'
@@ -16,6 +16,7 @@ class Order::OrdersController < Order::BaseController
   end
 
   def show
+    authorize @order
   end
 
   def add_item
@@ -26,11 +27,24 @@ class Order::OrdersController < Order::BaseController
   end
 
   def added_item
-    @item = User.active_order.items.last
+    @item = current_user.active_order.items.last
     authorize @item
   end
 
-  def
+  def location_select
+  end
+
+  def update_location
+    @order.attributes = order_params
+    authorize @order
+    if @order.save!
+      redirect_to order_location_selected_path
+    end
+  end
+
+  def location_selected
+    @location = current_user.active_order.location
+  end
 
   def edit
   end
@@ -41,11 +55,15 @@ private
   end
 
   def set_order
-    @order = Order.find(params[:id])
+    if params[:id]
+      @order = Order.find(params[:id])
+    else
+      @order = current_user.active_order
+    end
   end
 
   def order_params
-    params.require(:order).permit(:completed, :special_instructions,
+    params.require(:order).permit(:completed, :special_instructions, :location_id,
       items_attributes: { topping_ids: [] })
   end
 end

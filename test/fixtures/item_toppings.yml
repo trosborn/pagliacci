@@ -1,3 +1,7 @@
 x_pepperoni_topping:
-    item_id: <%= ActiveRecord::FixtureSet.identify :x_pepperoni_side_1 %>
-    topping_id: <%= ActiveRecord::FixtureSet.identify :x_pepperoni_topping %>
+  item_id: <%= ActiveRecord::FixtureSet.identify :x_pepperoni_side_1 %>
+  topping_id: <%= ActiveRecord::FixtureSet.identify :x_pepperoni_topping %>
+
+triple_anchovy_toppings:
+  item_id: <%= ActiveRecord::FixtureSet.identify :anchovy_side_1 %>
+  topping_id: <%= ActiveRecord::FixtureSet.identify :anchovy %>

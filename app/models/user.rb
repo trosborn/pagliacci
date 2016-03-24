@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  def self.active_order
-    Order.last
+  def active_order
+    orders.last
   end
 
   def customer?
