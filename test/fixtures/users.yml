@@ -10,3 +10,7 @@ admin:
 customer:
   email: customer@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+finalize_customer:
+  email: finalize_customer@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>

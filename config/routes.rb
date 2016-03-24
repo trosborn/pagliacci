@@ -6,10 +6,14 @@ Rails.application.routes.draw do
   namespace :order do
     get '', to: 'orders#home'
     get 'home', to: 'orders#home'
-    get 'checkout', to: 'cart#checkout'
     get 'add_item', to: 'orders#add_item'
     get 'added_item', to: 'orders#added_item'
-    post 'review', to: 'cart#review'
+    get 'location_select', to: 'orders#location_select'
+    get 'location_selected', to: 'orders#location_selected'
+    get '/orders/:id', to: 'orders#show', as: 'order'
+    get 'checkout', to: 'cart#checkout'
+    post 'complete', to: 'cart#complete'
+    post 'update_location', to: 'orders#update_location'
     resources :items
   end
 

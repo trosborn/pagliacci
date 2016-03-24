@@ -22,6 +22,16 @@ x_pepperoni_topping:
 x_pepperoni_side_1:
   whole_pie: x_pepperoni
 
+anchovy_pie:
+  name: The Original
+  order_id: 1
+
+anchovy_side_1:
+  whole_pie: anchovy_pie
+
+anchovy:
+  name: Anchovy
+
 coke:
   name: coke
   kind: Beverage

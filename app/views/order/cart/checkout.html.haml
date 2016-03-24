@@ -1,3 +1,7 @@
-= form_tag 'review'
-= collection_select :order, :location_id, Location.all, :id, :name, prompt: true
-= submit_tag 'Review Order'
+= form_tag order_complete_path
+= hidden_field :order, :id, name: 'order[id]'
+= hidden_field :order, :completed, name: 'order[completed]', value: true
+- @order.items.whole_pies.each do |i|
+  = "#{i.sizes.first.name} #{i.name}"
+= @order.location.name
+= submit_tag 'Finalize'

@@ -1,0 +1,4 @@
+finalize_order:
+  user: finalize_customer
+  location: lake_city_way
+  id: 1
