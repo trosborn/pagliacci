@@ -29,4 +29,16 @@ class Item < ActiveRecord::Base
   def size_selection= val
     sizes.build name: Size.find_by_id(val).name
   end
+
+  def side_one
+    sides.first
+  end
+
+  def side_two
+    sides.second
+  end
+
+  def selected_size_name
+    sizes.first.name
+  end
 end

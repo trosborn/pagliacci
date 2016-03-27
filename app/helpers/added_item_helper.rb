@@ -1,16 +1,13 @@
 module AddedItemHelper
   def added_item_to_order item
-    side_1_topping_names = item.sides.first.toppings.pluck(:name).join(' ').downcase
-    side_2 = item.sides.try(:second)
-    if side_2 != nil
-      side_2_topping_names = side_2.toppings.pluck(:name).join(' ').downcase
+    if item.side_two == nil
+      "Your #{item.selected_size_name.downcase} #{topping_names(item.side_one)} #{item.kind.downcase} has been added to your order"
     else
-      side_2_topping_names = nil
+      "Your #{item.selected_size_name.downcase} one half #{topping_names(item.side_one)} other half #{topping_names(item.side_two)} #{item.kind.downcase} has been added to your order"
     end
-    if side_2_topping_names == nil
-      "Your #{item.sizes.first.name.downcase} #{side_1_topping_names} #{item.kind.downcase} has been added to your order"
-    else
-      "Your #{item.sizes.first.name.downcase} one half #{side_1_topping_names} other half #{side_2_topping_names} has been added to your order"
-    end
+  end
+
+  def topping_names side
+    side.toppings.pluck(:name).join(' ').downcase
   end
 end
