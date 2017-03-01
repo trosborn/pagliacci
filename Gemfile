@@ -56,4 +56,5 @@ end
 
 gem 'rack-mini-profiler'
 gem 'flamegraph'
+gem 'airbrake', '~> 5.7'
 
