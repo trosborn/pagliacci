@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322190624) do
+ActiveRecord::Schema.define(version: 20160327042117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20160322190624) do
     t.string   "qualifier"
     t.integer  "order_id"
     t.integer  "whole_pie_id"
-    t.boolean  "side1"
   end
 
   add_index "items", ["toppings_id"], name: "index_items_on_toppings_id", using: :btree
